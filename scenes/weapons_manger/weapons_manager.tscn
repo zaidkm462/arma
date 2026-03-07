@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cw8364ij3n64u"]
+
+[ext_resource type="Script" uid="uid://dib4ssy8duhm5" path="res://scenes/weapons_manger/weapons_manager.gd" id="1_soryo"]
+
+[node name="Weapons_Manager" type="Node" unique_id=1213394010]
+script = ExtResource("1_soryo")
