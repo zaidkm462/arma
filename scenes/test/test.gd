@@ -4,6 +4,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await owner.ready
+	GameManager.SpawnManager.spawn("zombie", Vector2(200, 200))
 	# here is the ready code.
 
 
