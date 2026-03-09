@@ -9,6 +9,10 @@ func _physics_process(delta):
 	var direction=Input.get_vector("left","right","up","down")
 	velocity=direction*300
 	move_and_slide()
+	if direction.x>0:
+		animated_sprite.flip_h=false
+	elif direction.x<0:
+		animated_sprite.flip_h=true
 	if velocity.length()>0:
 		animated_sprite.play("walk")
 	else:
