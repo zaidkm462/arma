@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cttcjxne7vvt8"]
+
+[ext_resource type="Texture2D" uid="uid://ckc4xq1vqg4bl" path="res://cute mushroom idle.png" id="1_cuyo6"]
+[ext_resource type="Texture2D" uid="uid://dhxttjlp1xo4u" path="res://cute mushroom walk.png" id="2_mutn8"]
+
+[sub_resource type="GDScript" id="GDScript_cuyo6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mutn8"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgi2k"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8hpl"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ex5l"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bix7t"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bblvu"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q52vl"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l884r"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rlhq"]
+atlas = ExtResource("1_cuyo6")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe6dy"]
+atlas = ExtResource("2_mutn8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuvpk"]
+atlas = ExtResource("2_mutn8")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvcjf"]
+atlas = ExtResource("2_mutn8")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pheb"]
+atlas = ExtResource("2_mutn8")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1xxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mutn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgi2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8hpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ex5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bix7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bblvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q52vl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l884r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rlhq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oe6dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuvpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvcjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pheb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mutn8"]
+radius = 20.396078
+
+[node name="Character" type="CharacterBody2D" unique_id=263549604]
+script = SubResource("GDScript_cuyo6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=847142214]
+sprite_frames = SubResource("SpriteFrames_h1xxs")
+animation = &"idle"
+frame = 5
+frame_progress = 0.9535241
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275933405]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_mutn8")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=246888551]
