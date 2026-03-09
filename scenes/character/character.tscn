@@ -116,6 +116,7 @@ radius = 20.396078
 script = SubResource("GDScript_cuyo6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=847142214]
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_h1xxs")
 animation = &"idle"
 frame = 5
