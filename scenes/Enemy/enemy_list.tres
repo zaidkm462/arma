@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="EnemyList" format=3 uid="uid://duu5ktl01fb0e"]
+
+[ext_resource type="Script" uid="uid://bkpy6iys2uyn7" path="res://scenes/Enemy/resources/single_enemy.gd" id="1_kdrl4"]
+[ext_resource type="Script" uid="uid://cubnjyephtpfi" path="res://scenes/Enemy/resources/enemy_list.gd" id="2_374cv"]
+[ext_resource type="PackedScene" uid="uid://dpx5ydn2uiwgi" path="res://scenes/Enemy/Enemy2.tscn" id="2_ssfr7"]
+[ext_resource type="PackedScene" uid="uid://b0u2u80yf7pyq" path="res://scenes/Enemy/Enemy1.tscn" id="3_2xb6f"]
+
+[sub_resource type="Resource" id="Resource_6ta51"]
+script = ExtResource("1_kdrl4")
+name = "zombie"
+scene = ExtResource("2_ssfr7")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
+
+[sub_resource type="Resource" id="Resource_8i3qk"]
+script = ExtResource("1_kdrl4")
+name = "wizard"
+scene = ExtResource("3_2xb6f")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
+
+[resource]
+script = ExtResource("2_374cv")
+enemies = Array[ExtResource("1_kdrl4")]([SubResource("Resource_6ta51"), SubResource("Resource_8i3qk")])
+metadata/_custom_type_script = "uid://cubnjyephtpfi"

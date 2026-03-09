@@ -1,6 +1,126 @@
-[gd_scene format=3 uid="uid://dhrugbfdtpano"]
+[gd_scene format=3 uid="uid://cbcopwphopgql"]
 
-[ext_resource type="Script" uid="uid://nisey7la5kfs" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://c6rg8tncb3xwd" path="res://scenes/player/cute mushroom idle.png" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://73xy4je2m4i8" path="res://scenes/player/player.gd" id="1_gmlin"]
+[ext_resource type="Texture2D" uid="uid://dftisyhut673c" path="res://scenes/player/cute mushroom walk.png" id="2_gmlin"]
+[ext_resource type="Resource" uid="uid://dmgw1kf4oqntm" path="res://scenes/player/defaultplayerstats.tres" id="2_lvxji"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1354128307]
-script = ExtResource("1_8afob")
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1x3f"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8run"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouso4"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blune"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th5th"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7smn1"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raeie"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxu8e"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvumn"]
+atlas = ExtResource("1_dovo2")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou6is"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_necax"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4lks"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg34l"]
+atlas = ExtResource("2_gmlin")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4h2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1x3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8run")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouso4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blune")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th5th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7smn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raeie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxu8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvumn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou6is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_necax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4lks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg34l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8abn"]
+radius = 20.0
+
+[node name="player" type="CharacterBody2D" unique_id=825762787]
+script = ExtResource("1_gmlin")
+stats = ExtResource("2_lvxji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=317213119]
+sprite_frames = SubResource("SpriteFrames_m4h2d")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=25647012]
+shape = SubResource("CircleShape2D_p8abn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=171739448]

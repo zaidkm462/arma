@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dpx5ydn2uiwgi"]
+
+[ext_resource type="Texture2D" uid="uid://qgivk08srix2" path="res://scenes/Enemy/Screenshot 2026-03-08 002645.png" id="1_2h8u8"]
+
+[node name="Enemy2" type="Area2D" unique_id=70588474]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=656304800]
+texture = ExtResource("1_2h8u8")

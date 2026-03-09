@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cw8364ij3n64u" path="res://scenes/weapons_manger/weapons_manager.tscn" id="2_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://dvc01gln7cs16" path="res://scenes/cards_manager/cards_manager.tscn" id="3_6q06x"]
 [ext_resource type="PackedScene" uid="uid://cxo7e172lhiv5" path="res://scenes/tile_map/tile_map.tscn" id="4_6q06x"]
-[ext_resource type="PackedScene" uid="uid://dhrugbfdtpano" path="res://scenes/player/player.tscn" id="5_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://cbcopwphopgql" path="res://scenes/player/player.tscn" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://drcv723tyiln1" path="res://scenes/test/test.tscn" id="6_ow5a4"]
 
 [node name="Main" type="Node2D" unique_id=1303210787]
@@ -21,6 +21,6 @@
 
 [node name="TileMap" parent="." unique_id=1601202585 instance=ExtResource("4_6q06x")]
 
-[node name="Player" parent="." unique_id=1354128307 instance=ExtResource("5_ow5a4")]
-
 [node name="Test" parent="." unique_id=1495959348 instance=ExtResource("6_ow5a4")]
+
+[node name="player" parent="." unique_id=825762787 instance=ExtResource("6_hujxm")]
