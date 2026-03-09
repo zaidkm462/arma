@@ -1,13 +1,13 @@
 extends CharacterBody2D
 @onready var animated_sprite=$AnimatedSprite2D
-@export var stats:characterstats
+@export var stats:playerstats
 func _ready():
 	GameManager.Player=self
 	if stats and stats.current_health<=0:
 		stats.current_health=stats.max_health
 func _physics_process(delta):
 	var direction=Input.get_vector("left","right","up","down")
-	velocity=direction*300
+	velocity=direction*100
 	move_and_slide()
 	if direction.x>0:
 		animated_sprite.flip_h=false

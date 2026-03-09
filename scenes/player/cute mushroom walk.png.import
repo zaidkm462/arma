@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckc4xq1vqg4bl"
-path="res://.godot/imported/cute mushroom idle.png-f656f2576b61c712362eb94799a2d39b.ctex"
+uid="uid://dftisyhut673c"
+path="res://.godot/imported/cute mushroom walk.png-13ecfe14b8dd45519ce703df0c3b4aff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cute mushroom idle.png"
-dest_files=["res://.godot/imported/cute mushroom idle.png-f656f2576b61c712362eb94799a2d39b.ctex"]
+source_file="res://scenes/player/cute mushroom walk.png"
+dest_files=["res://.godot/imported/cute mushroom walk.png-13ecfe14b8dd45519ce703df0c3b4aff.ctex"]
 
 [params]
 
