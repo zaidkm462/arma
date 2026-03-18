@@ -20,6 +20,7 @@
 [node name="Weapons" type="Node" parent="." unique_id=107232451]
 
 [node name="TileMap" parent="." unique_id=1601202585 instance=ExtResource("4_6q06x")]
+position = Vector2(168, 8)
 
 [node name="Test" parent="." unique_id=1495959348 instance=ExtResource("6_ow5a4")]
 

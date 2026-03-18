@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://736kwydkq7jl"
-path="res://.godot/imported/scifitiles1-sheet.png-e5f8732b5b671c41ed526f541faf0bfe.ctex"
+uid="uid://bawwkjujtbqs7"
+path="res://.godot/imported/pixel-cyberpunk-interior1.png-68df39a7484277bce1d9e78a6f826bf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/tile_map/scifitiles1-sheet.png"
-dest_files=["res://.godot/imported/scifitiles1-sheet.png-e5f8732b5b671c41ed526f541faf0bfe.ctex"]
+source_file="res://scenes/tile_map/pixel-cyberpunk-interior1.png"
+dest_files=["res://.godot/imported/pixel-cyberpunk-interior1.png-68df39a7484277bce1d9e78a6f826bf0.ctex"]
 
 [params]
 

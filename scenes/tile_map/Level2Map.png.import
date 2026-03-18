@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmb45dnjy8mxo"
-path="res://.godot/imported/tileset_arranged.png-cbcc87519ef5965ca0410013edd6cf1f.ctex"
+uid="uid://ct4ey30bco6m3"
+path="res://.godot/imported/Level2Map.png-ba927acf4cc87d9f8464ea7a9387a829.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/tile_map/tileset_arranged.png"
-dest_files=["res://.godot/imported/tileset_arranged.png-cbcc87519ef5965ca0410013edd6cf1f.ctex"]
+source_file="res://scenes/tile_map/Level2Map.png"
+dest_files=["res://.godot/imported/Level2Map.png-ba927acf4cc87d9f8464ea7a9387a829.ctex"]
 
 [params]
 
