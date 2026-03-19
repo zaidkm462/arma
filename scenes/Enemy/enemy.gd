@@ -1,5 +1,5 @@
 extends Area2D
-
+@onready var animated_sprite=$AnimatedSprite2D
 @export var health=10
 @export var attack_damage=5
 @export var speed=100
@@ -34,6 +34,13 @@ func _physics_process(delta):
 		separation=separation.normalized()*separation_strength*delta
 		desired_movement+=separation
 	global_position+=desired_movement
+	
+	if direction.x>0:
+		animated_sprite.flip_h=false
+	elif direction.x<0:
+		animated_sprite.flip_h=true
+	if desired_movement.length()>0:
+		animated_sprite.play("enemyanimation")
 
 func _on_body_entered(body):
 	if body==player and can_damage:
