@@ -70,7 +70,7 @@ region = Rect2(1400, 150, 200, 150)
 [sub_resource type="SpriteFrames" id="SpriteFrames_k06wl"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_84vye")
 }, {
 "duration": 1.0,
@@ -134,6 +134,8 @@ script = ExtResource("1_84vye")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_k06wl")
 animation = &"enemyanimation"
+frame_progress = 0.33452675
+speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956411851]
 shape = SubResource("CircleShape2D_fqx87")
