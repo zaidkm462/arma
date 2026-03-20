@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cw8364ij3n64u" path="res://scenes/weapons_manger/weapons_manager.tscn" id="2_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://dvc01gln7cs16" path="res://scenes/cards_manager/cards_manager.tscn" id="3_6q06x"]
 [ext_resource type="PackedScene" uid="uid://cxo7e172lhiv5" path="res://scenes/tile_map/tile_map.tscn" id="4_6q06x"]
-[ext_resource type="PackedScene" uid="uid://bvq0jwncywewo" path="res://scenes/Enemy/enemy.tscn" id="4_hujxm"]
 [ext_resource type="PackedScene" uid="uid://cbcopwphopgql" path="res://scenes/player/player.tscn" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://drcv723tyiln1" path="res://scenes/test/test.tscn" id="6_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://cojoy7f06u6ib" path="res://scenes/dash/dash.tscn" id="7_hujxm"]
 
 [node name="Main" type="Node2D" unique_id=1303210787]
 
@@ -18,13 +18,15 @@
 
 [node name="Enemies" type="Node" parent="." unique_id=357136998]
 
-[node name="Enemy" parent="Enemies" unique_id=2069956841 instance=ExtResource("4_hujxm")]
+[node name="Projectiles" type="Node" parent="." unique_id=1926293889]
 
-[node name="Weapons" type="Node" parent="." unique_id=107232451]
+[node name="Pickups" type="Node" parent="." unique_id=1828804558]
+
+[node name="Test" parent="." unique_id=1495959348 instance=ExtResource("6_ow5a4")]
 
 [node name="TileMap" parent="." unique_id=1601202585 instance=ExtResource("4_6q06x")]
 position = Vector2(168, 8)
 
-[node name="Test" parent="." unique_id=1495959348 instance=ExtResource("6_ow5a4")]
-
 [node name="player" parent="." unique_id=825762787 groups=["player"] instance=ExtResource("6_hujxm")]
+
+[node name="Dash" parent="." unique_id=1767116134 instance=ExtResource("7_hujxm")]

@@ -6,6 +6,16 @@ var damage=10
 var speed=50
 var is_contact=false
 
+
+
+
+var xp_drop_chance: float = 0.6
+var gold_drop_chance: float = 0.3
+var xp_scene: PackedScene = preload("res://scenes/xp/xp.tscn")
+var gold_scene: PackedScene = preload("res://scenes/gold/gold.tscn")
+
+
+
 func _ready():
 	player=get_tree().get_first_node_in_group("player")
 	body_entered.connect(_on_body_entered)
@@ -44,4 +54,21 @@ func damage_enemy(amount:int):
 		die()
 
 func die():
+	drop_loot()
 	GameManager.SpawnManager.kill(self)
+
+
+func drop_loot() -> void:
+	var roll: float = randf()
+
+	if roll > xp_drop_chance:
+		return
+
+	if roll > gold_drop_chance:
+		var xp: Area2D = xp_scene.instantiate()
+		xp.global_position = global_position
+		get_tree().current_scene.get_node("Pickups").call_deferred("add_child", xp)
+	else:
+		var gold: Area2D = gold_scene.instantiate()
+		gold.global_position = global_position
+		get_tree().current_scene.get_node("Pickups").call_deferred("add_child", gold)

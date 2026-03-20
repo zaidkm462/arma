@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://4m8yo04djhcm"]
+
+[ext_resource type="Script" uid="uid://cj6pt3fmnbpat" path="res://scenes/xp/xp.gd" id="1_jp7dy"]
+[ext_resource type="Texture2D" uid="uid://uwrq86ex1vqy" path="res://scenes/xp/Icon - Base HardLine.png" id="1_kqc2r"]
+[ext_resource type="Texture2D" uid="uid://cnmclccdoe676" path="res://scenes/xp/Medium Circuit Highlight 2.png" id="2_jp7dy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fssp"]
+atlas = ExtResource("2_jp7dy")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06l24"]
+atlas = ExtResource("2_jp7dy")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47cij"]
+atlas = ExtResource("2_jp7dy")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5po5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fssp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06l24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47cij")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp7dy"]
+size = Vector2(117.647095, 114.70592)
+
+[node name="XP" type="Area2D" unique_id=155652072]
+scale = Vector2(0.17, 0.17)
+collision_layer = 16
+script = ExtResource("1_jp7dy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1794228872]
+texture = ExtResource("1_kqc2r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=355531707]
+sprite_frames = SubResource("SpriteFrames_f5po5")
+frame_progress = 0.028183235
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182726981]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_jp7dy")

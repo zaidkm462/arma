@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://by3b7hysyfkis"]
+
+[ext_resource type="Script" uid="uid://b8noofdhdjemu" path="res://scenes/weapon/magical_wand/magical_wand.gd" id="1_bicl7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bicl7"]
+
+[node name="MagicalWand" type="Area2D" unique_id=688190378]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_bicl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1692799809]
+shape = SubResource("CircleShape2D_bicl7")
+
+[node name="CoolDownTimer" type="Timer" parent="." unique_id=1727773845]
