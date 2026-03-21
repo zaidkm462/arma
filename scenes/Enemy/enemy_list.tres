@@ -4,31 +4,7 @@
 [ext_resource type="Script" uid="uid://cubnjyephtpfi" path="res://scenes/Enemy/resources/enemy_list.gd" id="2_374cv"]
 [ext_resource type="Resource" uid="uid://c3uvkbwbj5gv" path="res://scenes/Enemy/resources/futuristicenemy.tres" id="4_2xb6f"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_374cv"]
-load_path = "res://.godot/imported/Screenshot 2026-03-08 003036.png-923cbbbda0cf587364cbdfea8477221a.ctex"
-
-[sub_resource type="PackedScene" id="PackedScene_ssfr7"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"id_paths": [PackedInt32Array()],
-"names": PackedStringArray("Area2D", "Area2D", "Sprite2D", "Sprite2D", "texture"),
-"node_count": 2,
-"node_ids": PackedInt32Array(933176307, 460259515),
-"node_paths": [NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 1, 4, 0, 0),
-"variants": [SubResource("CompressedTexture2D_374cv")],
-"version": 3
-}
-
-[sub_resource type="Resource" id="Resource_8i3qk"]
-script = ExtResource("1_kdrl4")
-name = "wizard"
-scene = SubResource("PackedScene_ssfr7")
-metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
-
 [resource]
 script = ExtResource("2_374cv")
-enemies = Array[ExtResource("1_kdrl4")]([SubResource("Resource_8i3qk"), ExtResource("4_2xb6f")])
+enemies = Array[ExtResource("1_kdrl4")]([ExtResource("4_2xb6f")])
 metadata/_custom_type_script = "uid://cubnjyephtpfi"
