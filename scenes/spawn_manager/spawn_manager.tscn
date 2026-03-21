@@ -4,3 +4,5 @@
 
 [node name="SpawnManager" type="Node" unique_id=1376476210]
 script = ExtResource("1_lwkyy")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1273801544]
