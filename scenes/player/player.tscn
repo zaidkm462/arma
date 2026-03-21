@@ -104,5 +104,3 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_75vfm")
 value = 50.0
 show_percentage = false
 script = ExtResource("5_p47bc")
-
-[node name="Weapons" type="Node2D" parent="." unique_id=738009106]

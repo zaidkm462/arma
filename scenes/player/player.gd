@@ -44,7 +44,7 @@ func damage(amount: int) -> void:
 
 func die():
 	print("Player died")
-	GameManager.lose_game()
+	#queue_free()
 
 func _on_vul_timeout() -> void: is_vulnerable = true
 func update_vulnerability_timer() -> void:

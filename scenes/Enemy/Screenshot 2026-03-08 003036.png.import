@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uwrq86ex1vqy"
-path="res://.godot/imported/Icon - Base HardLine.png-69eba0ce430c291c14b411db0c9edbfa.ctex"
+uid="uid://ch0e1xy63pbpk"
+path="res://.godot/imported/Screenshot 2026-03-08 003036.png-923cbbbda0cf587364cbdfea8477221a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/xp/Icon - Base HardLine.png"
-dest_files=["res://.godot/imported/Icon - Base HardLine.png-69eba0ce430c291c14b411db0c9edbfa.ctex"]
+source_file="res://scenes/Enemy/Screenshot 2026-03-08 003036.png"
+dest_files=["res://.godot/imported/Screenshot 2026-03-08 003036.png-923cbbbda0cf587364cbdfea8477221a.ctex"]
 
 [params]
 

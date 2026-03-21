@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnfr10dqd3ruf"
-path="res://.godot/imported/133.png-1d3e0bf7569388a0135afa5e02f515c9.ctex"
+uid="uid://c26eduu3kf4y7"
+path="res://.godot/imported/m3.png-7a184e680ca2475353727e4f17175a3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/weapons/magical_wand/133.png"
-dest_files=["res://.godot/imported/133.png-1d3e0bf7569388a0135afa5e02f515c9.ctex"]
+source_file="res://scenes/Enemy/m3.png"
+dest_files=["res://.godot/imported/m3.png-7a184e680ca2475353727e4f17175a3b.ctex"]
 
 [params]
 

@@ -4,5 +4,3 @@
 
 [node name="GameManager" type="Node" unique_id=425652124]
 script = ExtResource("1_lycnq")
-
-[node name="Timer" type="Timer" parent="." unique_id=48038639]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponsList" format=3 uid="uid://be2uwuibs3lgl"]
+
+[ext_resource type="Script" uid="uid://cudsh1kbblyl4" path="res://scenes/weapon/resources/weapons_list.gd" id="1_e2biq"]
+[ext_resource type="Script" uid="uid://bojfqrbixgjfk" path="res://scenes/weapon/resources/single_weapon.gd" id="2_2o70p"]
+[ext_resource type="PackedScene" uid="uid://dqefjp3ysx6nm" path="res://scenes/weapon/TestWeapon.tscn" id="3_2o70p"]
+
+[sub_resource type="Resource" id="Resource_1gvng"]
+script = ExtResource("2_2o70p")
+name = "test"
+scene = ExtResource("3_2o70p")
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[resource]
+script = ExtResource("1_e2biq")
+weapons = Array[ExtResource("2_2o70p")]([SubResource("Resource_1gvng")])
+metadata/_custom_type_script = "uid://cudsh1kbblyl4"
