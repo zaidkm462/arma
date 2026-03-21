@@ -3,9 +3,10 @@ extends Area2D
 @onready var animated_sprite=$AnimatedSprite2D
 var health=3
 var damage=10
-var speed=50
+var speed=40
 var is_contact=false
-
+var damage_cooldown=1
+var last_damage_time=0
 
 
 
@@ -23,15 +24,22 @@ func _ready():
 	var overlapping_bodies=get_overlapping_bodies()
 	if player in overlapping_bodies:
 		is_contact=true
+		apply_damage_to_player()
+		last_damage_time=Time.get_ticks_msec()/1000.0
 
 func _process(delta):
 	if player and not is_contact:
 		move_toward_player(delta)
+	if is_contact and player:
+		var current_time=Time.get_ticks_msec()/1000.0
+		if current_time-last_damage_time>=damage_cooldown:
+			apply_damage_to_player()
+			last_damage_time=current_time
 
 func move_toward_player(delta):
 	var direction=(player.global_position-global_position).normalized()
 	global_position+=direction*speed*delta
-	
+
 	if direction.x>0.3:
 		animated_sprite.flip_h=false
 	elif direction.x<-0.3:
@@ -42,11 +50,16 @@ func move_toward_player(delta):
 func _on_body_entered(body:CharacterBody2D):
 	if body==player:
 		is_contact=true
-		player.damage(damage)
-			
+		apply_damage_to_player()
+		last_damage_time=Time.get_ticks_msec()/1000.0
+
 func _on_body_exited(body:CharacterBody2D):
 	if body==player:
 		is_contact=false
+
+func apply_damage_to_player():
+	if player and player.has_method("damage"):
+		player.damage(damage)
 
 func damage_enemy(amount:int):
 	health-=amount
