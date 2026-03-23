@@ -1,51 +1,54 @@
 [gd_scene format=3 uid="uid://dpx5ydn2uiwgi"]
 
 [ext_resource type="Script" uid="uid://bnwpb800ff0d7" path="res://scenes/Enemy/enemy2.gd" id="1_mlyav"]
-[ext_resource type="Texture2D" uid="uid://ua5p7tn7bjl0" path="res://scenes/Enemy/Spider.png" id="2_mlyav"]
+[ext_resource type="Texture2D" uid="uid://du8v83pmnqihm" path="res://scenes/Enemy/Spider.png" id="2_mlyav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlyav"]
+atlas = ExtResource("2_mlyav")
+region = Rect2(0, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldfmd"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(0, 0, 94, 81)
+region = Rect2(96, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yqdi"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(94, 0, 94, 81)
+region = Rect2(192, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5sgj"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(188, 0, 94, 81)
+region = Rect2(288, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs801"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(282, 0, 94, 81)
+region = Rect2(384, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vo4iy"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(376, 0, 94, 81)
+region = Rect2(480, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t7nn2"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(470, 0, 94, 81)
+region = Rect2(576, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1is7f"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(564, 0, 94, 81)
+region = Rect2(672, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbce1"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(658, 0, 94, 81)
+region = Rect2(768, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_geitt"]
 atlas = ExtResource("2_mlyav")
-region = Rect2(752, 0, 94, 81)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hw7jo"]
-atlas = ExtResource("2_mlyav")
-region = Rect2(846, 0, 94, 81)
+region = Rect2(864, 305, 96, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k06wl"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlyav")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ldfmd")
 }, {
@@ -72,9 +75,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_geitt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hw7jo")
 }],
 "loop": true,
 "name": &"enemy2animation",
@@ -92,9 +92,8 @@ script = ExtResource("1_mlyav")
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_k06wl")
 animation = &"enemy2animation"
-frame = 4
-frame_progress = 0.8406517
+frame_progress = 0.9398605
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956411851]
-position = Vector2(-2, -4)
+position = Vector2(-11, 0)
 shape = SubResource("CircleShape2D_fqx87")
