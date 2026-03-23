@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleEnemy" format=3 uid="uid://dshiuq82kano8"]
+
+[ext_resource type="PackedScene" uid="uid://dpx5ydn2uiwgi" path="res://scenes/Enemy/enemy2.tscn" id="1_j88g3"]
+[ext_resource type="Script" uid="uid://bkpy6iys2uyn7" path="res://scenes/Enemy/resources/single_enemy.gd" id="1_n1ee4"]
+
+[resource]
+script = ExtResource("1_n1ee4")
+name = "Spider"
+scene = ExtResource("1_j88g3")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"

@@ -124,7 +124,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fqx87"]
-radius = 35.0
+radius = 33.01515
 
 [node name="Enemy" type="Area2D" unique_id=2069956841]
 collision_layer = 2
@@ -137,4 +137,5 @@ animation = &"enemyanimation"
 frame_progress = 0.44072562
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956411851]
+position = Vector2(-2, 2)
 shape = SubResource("CircleShape2D_fqx87")

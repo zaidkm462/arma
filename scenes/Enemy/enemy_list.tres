@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bkpy6iys2uyn7" path="res://scenes/Enemy/resources/single_enemy.gd" id="1_kdrl4"]
 [ext_resource type="Script" uid="uid://cubnjyephtpfi" path="res://scenes/Enemy/resources/enemy_list.gd" id="2_374cv"]
-[ext_resource type="Resource" uid="uid://c3uvkbwbj5gv" path="res://scenes/Enemy/resources/futuristicenemy.tres" id="4_2xb6f"]
+[ext_resource type="Resource" uid="uid://dshiuq82kano8" path="res://scenes/Enemy/resources/spider.tres" id="3_ssfr7"]
+[ext_resource type="Resource" uid="uid://c3uvkbwbj5gv" path="res://scenes/Enemy/resources/robot.tres" id="4_2xb6f"]
 
 [resource]
 script = ExtResource("2_374cv")
-enemies = Array[ExtResource("1_kdrl4")]([ExtResource("4_2xb6f")])
+enemies = Array[ExtResource("1_kdrl4")]([ExtResource("4_2xb6f"), ExtResource("3_ssfr7")])
 metadata/_custom_type_script = "uid://cubnjyephtpfi"

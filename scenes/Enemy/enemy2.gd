@@ -1,9 +1,9 @@
 extends Area2D
 @onready var player
 @onready var animated_sprite=$AnimatedSprite2D
-var health=3
-var damage=10
-var speed=30
+var health=5
+var damage=1
+var speed=70
 var is_contact=false
 var damage_cooldown=1
 var last_damage_time=0
@@ -45,7 +45,7 @@ func move_toward_player(delta):
 	elif direction.x<-0.3:
 		animated_sprite.flip_h=true
 	if global_position.length()>0:
-		animated_sprite.play("enemyanimation")
+		animated_sprite.play("enemy2animation")
 
 func _on_body_entered(body:CharacterBody2D):
 	if body==player:
