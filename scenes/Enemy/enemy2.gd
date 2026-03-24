@@ -1,7 +1,7 @@
 extends Area2D
 @onready var player
 @onready var animated_sprite=$AnimatedSprite2D
-var health=5
+var health=2
 var damage=1
 var speed=70
 var is_contact=false
