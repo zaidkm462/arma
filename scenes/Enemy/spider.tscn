@@ -1,46 +1,46 @@
 [gd_scene format=3 uid="uid://dpx5ydn2uiwgi"]
 
-[ext_resource type="Script" uid="uid://bnwpb800ff0d7" path="res://scenes/Enemy/enemy2.gd" id="1_mlyav"]
-[ext_resource type="Texture2D" uid="uid://du8v83pmnqihm" path="res://scenes/Enemy/Spider.png" id="2_mlyav"]
+[ext_resource type="Script" uid="uid://bnwpb800ff0d7" path="res://scenes/Enemy/spider.gd" id="1_bak7y"]
+[ext_resource type="Texture2D" uid="uid://du8v83pmnqihm" path="res://scenes/Enemy/Spider.png" id="2_a8cpk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlyav"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(0, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldfmd"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(96, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yqdi"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(192, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5sgj"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(288, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fs801"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(384, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vo4iy"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(480, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t7nn2"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(576, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1is7f"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(672, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbce1"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(768, 305, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_geitt"]
-atlas = ExtResource("2_mlyav")
+atlas = ExtResource("2_a8cpk")
 region = Rect2(864, 305, 96, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k06wl"]
@@ -86,7 +86,7 @@ radius = 23.021729
 
 [node name="Enemy2" type="Area2D" unique_id=2069956841]
 collision_layer = 2
-script = ExtResource("1_mlyav")
+script = ExtResource("1_bak7y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=491380299]
 scale = Vector2(0.8, 0.8)

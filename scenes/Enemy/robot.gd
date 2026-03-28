@@ -7,8 +7,13 @@ var speed=30
 var is_contact=false
 var damage_cooldown=1
 var last_damage_time=0
-
-
+@export var knockback_strength=200
+@export var knockback_duration:float=0.2
+var knockback_active:bool=false
+var knockback_velocity:Vector2=Vector2.ZERO
+var knockback_timer=0
+@export var hit_flash_duration:float=0.3
+var hit_flash_tween:Tween=null
 
 var xp_drop_chance: float = 0.6
 var gold_drop_chance: float = 0.3
@@ -28,6 +33,12 @@ func _ready():
 		last_damage_time=Time.get_ticks_msec()/1000.0
 
 func _process(delta):
+	if knockback_active:
+		global_position+=knockback_velocity*delta
+		knockback_timer-=delta
+		if knockback_timer<=0:
+			knockback_active=false
+		return
 	if player and not is_contact:
 		move_toward_player(delta)
 	if is_contact and player:
@@ -63,9 +74,21 @@ func apply_damage_to_player():
 
 func damage_enemy(amount:int):
 	health-=amount
+	var direction=(global_position-player.global_position).normalized()
+	knockback_velocity=direction* knockback_strength
+	knockback_timer=knockback_duration
+	knockback_active=true
+	flash_sprite()
 	if health<=0:
 		die()
 
+func flash_sprite():
+	if hit_flash_tween:
+		hit_flash_tween.kill()
+	hit_flash_tween=create_tween()
+	hit_flash_tween.tween_property(animated_sprite,"modulate",Color.RED,hit_flash_duration*0.5)
+	hit_flash_tween.tween_property(animated_sprite,"modulate",Color.WHITE,hit_flash_duration*0.5)
+	
 func die():
 	drop_loot()
 	GameManager.SpawnManager.kill(self)

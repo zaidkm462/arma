@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvq0jwncywewo"]
 
-[ext_resource type="Script" uid="uid://tv86aflq3lxb" path="res://scenes/Enemy/enemy.gd" id="1_84vye"]
+[ext_resource type="Script" uid="uid://tv86aflq3lxb" path="res://scenes/Enemy/robot.gd" id="1_84vye"]
 [ext_resource type="Texture2D" uid="uid://dy56278bg4dpo" path="res://scenes/Enemy/Mech-walk-200×150px-sprites.png" id="1_muyyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84vye"]
