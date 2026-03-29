@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://o7kji425pfms"]
+
+[ext_resource type="Script" uid="uid://cd6acrbfh51bh" path="res://scenes/ui/items/items_store.gd" id="1_5y34j"]
+[ext_resource type="Texture2D" uid="uid://0hvwyc52h6f" path="res://scenes/ui/items/frame.png" id="2_5x0uo"]
+[ext_resource type="Texture2D" uid="uid://mri2q5kk8tkc" path="res://scenes/passive_items/battery.png" id="3_nqwiv"]
+[ext_resource type="Texture2D" uid="uid://bnukusijxbksb" path="res://scenes/ui/items/card2/buy.png" id="4_s83m4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhwtx"]
+texture = ExtResource("2_5x0uo")
+
+[sub_resource type="SystemFont" id="SystemFont_5y34j"]
+font_names = PackedStringArray("Courier New")
+font_weight = 550
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqwiv"]
+bg_color = Color(0, 0, 0, 0.35686275)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.972549, 0.7882353, 0.039215688, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqwiv"]
+
+[sub_resource type="SystemFont" id="SystemFont_fe657"]
+font_names = PackedStringArray("Courier New")
+font_weight = 550
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_32dtd"]
+font_names = PackedStringArray("Courier New")
+
+[node name="ItemsStore" type="Control" unique_id=1600485921]
+custom_minimum_size = Vector2(467, 337)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+script = ExtResource("1_5y34j")
+
+[node name="Panel" type="Panel" parent="." unique_id=2129618684]
+layout_mode = 0
+offset_right = 467.0
+offset_bottom = 337.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_xhwtx")
+
+[node name="Label" type="Label" parent="Panel" unique_id=794184667]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_top = 18.0
+offset_right = 62.5
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_5y34j")
+theme_override_font_sizes/font_size = 16
+text = "Passive Items"
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=1846086867]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 56.0
+offset_right = 436.0
+offset_bottom = 242.0
+theme_override_constants/h_separation = 26
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="DetailsPanel" type="Panel" parent="Panel" unique_id=712056486]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -84.0
+offset_right = -15.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nqwiv")
+
+[node name="Card" type="Panel" parent="Panel/DetailsPanel" unique_id=1418896809]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 86.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nqwiv")
+
+[node name="Label" type="Label" parent="Panel/DetailsPanel/Card" unique_id=1445124376]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_right = 23.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_fe657")
+theme_override_font_sizes/font_size = 11
+text = "Battery"
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Panel/DetailsPanel/Card" unique_id=872189293]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -42.0
+offset_right = 18.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_nqwiv")
+
+[node name="DescLabel" type="Label" parent="Panel/DetailsPanel" unique_id=548535065]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_32dtd")
+theme_override_font_sizes/font_size = 11
+text = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Panel/DetailsPanel" unique_id=1739456958]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 22.0
+offset_right = 408.0
+offset_bottom = 46.0
+texture_normal = ExtResource("4_s83m4")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/DetailsPanel/TextureButton" unique_id=687954366]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.25
+offset_top = -7.0
+offset_right = 23.25
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_fe657")
+theme_override_font_sizes/font_size = 11
+text = "200"
+horizontal_alignment = 1

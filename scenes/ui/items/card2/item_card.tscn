@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://wd3w5432m021"]
+
+[ext_resource type="Script" uid="uid://cw327mt8fsmtt" path="res://scenes/ui/items/card2/item_card.gd" id="1_66vof"]
+[ext_resource type="Texture2D" uid="uid://5vnpndsohnen" path="res://scenes/ui/items/card2/frame.png" id="1_lg71l"]
+[ext_resource type="Texture2D" uid="uid://mri2q5kk8tkc" path="res://scenes/passive_items/battery.png" id="4_xnjtm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xu1e"]
+texture = ExtResource("1_lg71l")
+
+[sub_resource type="SystemFont" id="SystemFont_svl8f"]
+font_names = PackedStringArray("Courier New")
+font_weight = 550
+subpixel_positioning = 0
+
+[node name="ItemCard" type="Button" unique_id=1093135442]
+custom_minimum_size = Vector2(81, 85)
+offset_right = 81.0
+offset_bottom = 85.0
+script = ExtResource("1_66vof")
+
+[node name="Panel" type="Panel" parent="." unique_id=1189765630]
+custom_minimum_size = Vector2(81, 85)
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 85.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2xu1e")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1153245579]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_top = 3.0
+offset_right = 23.5
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_svl8f")
+theme_override_font_sizes/font_size = 11
+text = "Battery"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1432533023]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 65.0
+offset_right = 71.0
+offset_bottom = 77.0
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Panel" unique_id=541498600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xnjtm")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

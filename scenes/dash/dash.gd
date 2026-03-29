@@ -6,14 +6,18 @@ extends CanvasLayer
 @onready var time_label:= $TimeLabel
 
 @onready var lose_panel := $Lose
-@onready var retry_button := $Lose/Button
+@onready var retry_button := $Lose/Button2
+@onready var main_button := $Lose/Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	retry_button.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	main_button.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+
 	GameManager.Dash = self
 	lose_panel.visible = false
 	retry_button.pressed.connect(_on_retry_button_pressed)
+	main_button.pressed.connect(_on_main_button_pressed)
 
 func update_res(xp: int, max_xp: int, level: int, gold: int) -> void:
 	xp_bar.max_value = max_xp
@@ -28,8 +32,10 @@ func update_time(seconds: int) -> void:
 	time_label.text = "%02d:%02d" % [minutes, secs]
 
 func _on_retry_button_pressed() -> void:
-	get_tree().paused = false
-	get_tree().reload_current_scene()
+	GameManager.start_new_run()
+
+func _on_main_button_pressed() -> void:
+	GameManager.go_to_main_menu()
 
 
 func show_lose() -> void:

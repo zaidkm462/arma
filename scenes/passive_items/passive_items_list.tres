@@ -1,0 +1,108 @@
+[gd_resource type="Resource" script_class="PassiveItemsList" format=3 uid="uid://b7bd3387blo3r"]
+
+[ext_resource type="Script" uid="uid://m0n82ctwgwkw" path="res://scenes/passive_items/item.gd" id="1_dk1ut"]
+[ext_resource type="Texture2D" uid="uid://mri2q5kk8tkc" path="res://scenes/passive_items/battery.png" id="2_0uunq"]
+[ext_resource type="Script" uid="uid://c72c5eeujbn0t" path="res://scenes/passive_items/items_list.gd" id="3_3qgcb"]
+[ext_resource type="Texture2D" uid="uid://hc1vpwqqjkju" path="res://scenes/passive_items/item2.png" id="3_gwjl1"]
+[ext_resource type="Texture2D" uid="uid://dkpyvm8jqnk66" path="res://scenes/passive_items/item3.png" id="4_6r1ld"]
+[ext_resource type="Texture2D" uid="uid://dsvyn5t8cldvj" path="res://scenes/passive_items/item4.png" id="5_xsy20"]
+[ext_resource type="Texture2D" uid="uid://c0k306hgs1f4s" path="res://scenes/passive_items/item5.png" id="6_d1mk1"]
+[ext_resource type="Texture2D" uid="uid://do23lvvqtn2do" path="res://scenes/passive_items/item6.png" id="7_6r1ld"]
+[ext_resource type="Texture2D" uid="uid://4vgto0yeeivu" path="res://scenes/passive_items/item7.png" id="7_j8i0c"]
+[ext_resource type="Texture2D" uid="uid://bxenh45srdsby" path="res://scenes/passive_items/item8.png" id="8_y2uw8"]
+
+[sub_resource type="Resource" id="Resource_wukb5"]
+script = ExtResource("1_dk1ut")
+id = "battery"
+name = "Battery"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("2_0uunq")
+stat = "might"
+base_value = 5.0
+rank = 2
+max_rank = 4
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_771nr"]
+script = ExtResource("1_dk1ut")
+id = "item2"
+name = "Item 2"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("3_gwjl1")
+stat = "might"
+base_value = 5.0
+rank = 3
+max_rank = 3
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_haudp"]
+script = ExtResource("1_dk1ut")
+id = "item3"
+name = "item3"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("4_6r1ld")
+stat = "might"
+base_value = 5.0
+rank = 4
+max_rank = 4
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_gwjl1"]
+script = ExtResource("1_dk1ut")
+id = "item4"
+name = "item4"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("5_xsy20")
+stat = "might"
+base_value = 5.0
+max_rank = 1
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_6r1ld"]
+script = ExtResource("1_dk1ut")
+id = "item5"
+name = "item5"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("6_d1mk1")
+stat = "might"
+base_value = 5.0
+max_rank = 4
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_xsy20"]
+script = ExtResource("1_dk1ut")
+id = "item6"
+name = "item6"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("7_6r1ld")
+stat = "might"
+base_value = 5.0
+max_rank = 4
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_d1mk1"]
+script = ExtResource("1_dk1ut")
+id = "item7"
+name = "item7"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("7_j8i0c")
+stat = "might"
+base_value = 5.0
+max_rank = 4
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_j8i0c"]
+script = ExtResource("1_dk1ut")
+id = "item8"
+name = "Battery"
+description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+icon = ExtResource("8_y2uw8")
+stat = "might"
+base_value = 5.0
+max_rank = 4
+base_price = 500
+
+[resource]
+script = ExtResource("3_3qgcb")
+items = Array[ExtResource("1_dk1ut")]([SubResource("Resource_wukb5"), SubResource("Resource_771nr"), SubResource("Resource_haudp"), SubResource("Resource_gwjl1"), SubResource("Resource_6r1ld"), SubResource("Resource_xsy20"), SubResource("Resource_d1mk1"), SubResource("Resource_j8i0c")])
+metadata/_custom_type_script = "uid://c72c5eeujbn0t"

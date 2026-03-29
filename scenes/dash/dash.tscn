@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cojoy7f06u6ib"]
 
 [ext_resource type="Script" uid="uid://dflb6c8q2glmv" path="res://scenes/dash/dash.gd" id="1_2866a"]
+[ext_resource type="Texture2D" uid="uid://dq4x837olwdpn" path="res://scenes/ui/main_menu/Untitled2.png" id="2_krjc4"]
 [ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://addons/virtual_joystick/virtual_joystick.tscn" id="2_rpex1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2866a"]
@@ -17,6 +18,13 @@ expand_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpex1"]
 bg_color = Color(0.3529412, 0.6901961, 0.35686275, 0.5882353)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whoxh"]
+texture = ExtResource("2_krjc4")
+texture_margin_left = 11.0
+texture_margin_top = 11.0
+texture_margin_right = 11.0
+texture_margin_bottom = 11.0
 
 [node name="Dash" type="CanvasLayer" unique_id=1767116134]
 script = ExtResource("1_2866a")
@@ -77,7 +85,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Lose" type="CanvasLayer" parent="." unique_id=1533121074]
-visible = false
 
 [node name="Back" type="ColorRect" parent="Lose" unique_id=59861069]
 anchors_preset = 15
@@ -87,21 +94,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
 
-[node name="ColorRect" type="ColorRect" parent="Lose" unique_id=1160955047]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Lose" unique_id=104572640]
+[node name="ColorRect2" type="Panel" parent="Lose" unique_id=444737415]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -113,7 +106,7 @@ offset_right = 95.0
 offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.14509805, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_whoxh")
 
 [node name="Label" type="Label" parent="Lose" unique_id=216750599]
 anchors_preset = 8
@@ -136,12 +129,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -46.0
-offset_top = 20.5
+offset_top = -7.5
 offset_right = 46.0
-offset_bottom = 51.5
+offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Try Aain"
+theme_override_font_sizes/font_size = 15
+text = "Main Menu"
 
 [node name="Label2" type="Label" parent="Lose" unique_id=1091437271]
 anchors_preset = 8
@@ -149,13 +143,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -30.0
-offset_right = 82.5
-offset_bottom = -7.0
+offset_left = -81.0
+offset_top = -56.0
+offset_right = 84.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "Good Luck Next Time"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Lose" unique_id=508080995]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 34.0
+offset_right = 46.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+text = "Try Again"
 
 [node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("2_rpex1")]
 offset_left = 176.0

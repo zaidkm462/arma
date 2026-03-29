@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c1b24n4k4qhbk"]
+
+[ext_resource type="Script" uid="uid://ddssk6lk710ap" path="res://scenes/ui/weapons/card/weapon_card.gd" id="1_4p16u"]
+[ext_resource type="Texture2D" uid="uid://dlksqm52ke6ct" path="res://scenes/ui/weapons/card/card_un.png" id="2_4p16u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xu1e"]
+texture = ExtResource("2_4p16u")
+
+[sub_resource type="SystemFont" id="SystemFont_svl8f"]
+font_names = PackedStringArray("Courier New")
+font_weight = 550
+subpixel_positioning = 0
+
+[node name="WeaponCard" type="Button" unique_id=1093135442]
+custom_minimum_size = Vector2(81, 85)
+offset_right = 81.0
+offset_bottom = 85.0
+script = ExtResource("1_4p16u")
+
+[node name="Panel" type="Panel" parent="." unique_id=1189765630]
+custom_minimum_size = Vector2(81, 85)
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 85.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2xu1e")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1153245579]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 8.0
+offset_right = 30.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_svl8f")
+theme_override_font_sizes/font_size = 10
+text = "Magic wand"
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Panel" unique_id=541498600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -8.5
+offset_right = 18.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

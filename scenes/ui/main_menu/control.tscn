@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://bim2pot00ufjf"]
+
+[ext_resource type="Script" uid="uid://cvw840qaw86qw" path="res://scenes/ui/main_menu/main_menu.gd" id="1_05kv7"]
+[ext_resource type="Texture2D" uid="uid://chomskm5ss21k" path="res://scenes/ui/main_menu/Background4.png" id="1_henwb"]
+[ext_resource type="Texture2D" uid="uid://qdmh31hppgv2" path="res://scenes/ui/main_menu/btn.png" id="2_05kv7"]
+[ext_resource type="Texture2D" uid="uid://3arroh14yxtq" path="res://scenes/ui/main_menu/locked.png" id="3_dfovx"]
+[ext_resource type="Texture2D" uid="uid://qxfrfg2h870p" path="res://scenes/ui/main_menu/unlocked.png" id="4_f06an"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3k0e"]
+texture = ExtResource("2_05kv7")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ettb2"]
+texture = ExtResource("3_dfovx")
+texture_margin_left = 45.0
+texture_margin_top = 15.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5bgy"]
+texture = ExtResource("4_f06an")
+texture_margin_left = 45.0
+texture_margin_top = 15.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05kv7"]
+bg_color = Color(0, 0, 0, 0.54901963)
+
+[node name="MainMenu" type="Control" unique_id=1692029245]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05kv7")
+
+[node name="Background" type="TextureRect" parent="." unique_id=316490580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.99999964
+offset_top = 0.9999981
+offset_right = 1441.0
+offset_bottom = 811.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.308, 0.308)
+texture = ExtResource("1_henwb")
+metadata/_edit_lock_ = true
+
+[node name="BtnsContainer" type="VBoxContainer" parent="." unique_id=743440521]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -66.0
+offset_right = 128.0
+offset_bottom = 66.0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="PlayBtn" type="Button" parent="BtnsContainer" unique_id=1982317060]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3k0e")
+text = "Play"
+
+[node name="LabBtn" type="Button" parent="BtnsContainer" unique_id=301467870]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3k0e")
+text = "Lab"
+
+[node name="ItemsBtn" type="Button" parent="BtnsContainer" unique_id=1742393088]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3k0e")
+text = "Items"
+
+[node name="WeaponsBtn" type="Button" parent="BtnsContainer" unique_id=1610266442]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_p3k0e")
+text = "Weapons"
+
+[node name="GoldPnl" type="Panel" parent="." unique_id=48528271]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 131.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ettb2")
+
+[node name="Label" type="Label" parent="GoldPnl" unique_id=1092439964]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -29.5
+offset_top = -21.0
+offset_right = 36.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.27450982, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 9
+text = "Gold Enc: 0 G"
+
+[node name="GoldPnl2" type="Panel" parent="." unique_id=483076065]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 43.0
+offset_right = 131.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_m5bgy")
+
+[node name="Label" type="Label" parent="GoldPnl2" unique_id=1004056932]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -29.5
+offset_top = -21.0
+offset_right = 36.5
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.27450982, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 9
+text = "Gold Dec: 0 G"
+
+[node name="Overlay" type="Panel" parent="." unique_id=1198077778]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_05kv7")
+
+[node name="Label" type="Label" parent="Overlay" unique_id=2087343032]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -11.5
+offset_right = 43.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LOADING.."
+
+[connection signal="pressed" from="BtnsContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="BtnsContainer/ItemsBtn" to="." method="_on_items_btn_pressed"]
+[connection signal="pressed" from="BtnsContainer/WeaponsBtn" to="." method="_on_weapons_btn_pressed"]
+[connection signal="gui_input" from="Overlay" to="." method="_on_overlay_gui_input"]

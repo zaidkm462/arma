@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0cetjl1vn3ti"]
 
 [ext_resource type="PackedScene" uid="uid://bdptfdoyc0poe" path="res://scenes/spawn_manager/spawn_manager.tscn" id="1_k2fmo"]
+[ext_resource type="Script" uid="uid://dt63m02tcttv5" path="res://scenes/main/main.gd" id="1_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://cw8364ij3n64u" path="res://scenes/weapons_manger/weapons_manager.tscn" id="2_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://dvc01gln7cs16" path="res://scenes/cards_manager/cards_manager.tscn" id="3_6q06x"]
 [ext_resource type="PackedScene" uid="uid://cxo7e172lhiv5" path="res://scenes/tile_map/tile_map.tscn" id="4_6q06x"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cojoy7f06u6ib" path="res://scenes/dash/dash.tscn" id="7_hujxm"]
 
 [node name="Main" type="Node2D" unique_id=1303210787]
+script = ExtResource("1_yyfjg")
 
 [node name="SpawnManager" parent="." unique_id=1376476210 instance=ExtResource("1_k2fmo")]
 

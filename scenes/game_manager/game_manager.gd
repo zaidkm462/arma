@@ -1,5 +1,11 @@
 extends Node
 
+const MAIN_MENU_SCENE := "res://scenes/ui/main_menu/control.tscn"
+const GAME_SCENE := "res://scenes/main/main.tscn"
+
+
+
+
 var Player = null
 var SpawnManager = null
 var WeaponsManager = null
@@ -16,8 +22,36 @@ var time := 0
 
 func _ready() -> void:
 	timer.timeout.connect(update_time)
-	timer.start()
 	
+
+func on_game_scene_ready() -> void:
+	get_tree().paused = false
+	timer.start()
+	Dash.update_res(xp, level * lvl_mul, level, gold)
+	Dash.update_time(time)
+
+func start_new_run() -> void:
+	get_tree().paused = false
+	_reset_data()
+	timer.stop()
+	get_tree().change_scene_to_file(GAME_SCENE)
+
+func _reset_data() -> void:
+	Player = null
+	SpawnManager = null
+	WeaponsManager = null
+	CardsManager = null
+	Dash = null	
+	level = 1
+	xp = 0
+	gold = 0
+	time = 0
+
+func go_to_main_menu() -> void:
+	get_tree().paused = false
+	timer.stop()
+	_reset_data()
+	get_tree().change_scene_to_file(MAIN_MENU_SCENE)
 
 func eat_xp(amount:int)-> void:
 	xp += amount

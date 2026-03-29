@@ -2,15 +2,73 @@
 
 [ext_resource type="Script" uid="uid://cudsh1kbblyl4" path="res://scenes/weapons/resources/weapons_list.gd" id="1_qahbe"]
 [ext_resource type="Script" uid="uid://bojfqrbixgjfk" path="res://scenes/weapons/magical_wand/single_weapon.gd" id="2_dtoox"]
+[ext_resource type="Texture2D" uid="uid://c0k306hgs1f4s" path="res://scenes/passive_items/item5.png" id="3_dtoox"]
 [ext_resource type="PackedScene" uid="uid://by3b7hysyfkis" path="res://scenes/weapons/magical_wand/magical_wand.tscn" id="3_qahbe"]
 
 [sub_resource type="Resource" id="Resource_1gvng"]
 script = ExtResource("2_dtoox")
-name = "mwand"
+id = "mwand"
+name = "Magic Wand"
 scene = ExtResource("3_qahbe")
+icon = ExtResource("3_dtoox")
+price = 400
+purchased = true
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[sub_resource type="Resource" id="Resource_qahbe"]
+script = ExtResource("2_dtoox")
+id = "weapon2"
+name = "Weapon 2"
+icon = ExtResource("3_dtoox")
+price = 300
+purchased = true
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[sub_resource type="Resource" id="Resource_dtoox"]
+script = ExtResource("2_dtoox")
+id = "weapon3"
+name = "Weapon 3"
+icon = ExtResource("3_dtoox")
+price = 3000
+purchased = true
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[sub_resource type="Resource" id="Resource_oblaw"]
+script = ExtResource("2_dtoox")
+id = "weapon4"
+name = "Weapon 4"
+price = 300
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[sub_resource type="Resource" id="Resource_ix3oe"]
+script = ExtResource("2_dtoox")
+id = "weapon5"
+name = "Weapon 5"
+price = 300
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[sub_resource type="Resource" id="Resource_b0xag"]
+script = ExtResource("2_dtoox")
+id = "weapon6"
+name = "Weapon 6"
+price = 300
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[sub_resource type="Resource" id="Resource_seikp"]
+script = ExtResource("2_dtoox")
+id = "weapon7"
+name = "Weapon 7"
+price = 300
+metadata/_custom_type_script = "uid://bojfqrbixgjfk"
+
+[sub_resource type="Resource" id="Resource_cduww"]
+script = ExtResource("2_dtoox")
+id = "weapon8"
+name = "Weapon 8"
+price = 300
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
 [resource]
 script = ExtResource("1_qahbe")
-weapons = Array[ExtResource("2_dtoox")]([SubResource("Resource_1gvng")])
+weapons = Array[ExtResource("2_dtoox")]([SubResource("Resource_1gvng"), SubResource("Resource_qahbe"), SubResource("Resource_dtoox"), SubResource("Resource_oblaw"), SubResource("Resource_ix3oe"), SubResource("Resource_b0xag"), SubResource("Resource_seikp"), SubResource("Resource_cduww")])
 metadata/_custom_type_script = "uid://cudsh1kbblyl4"
