@@ -37,6 +37,9 @@ func damage(amount: int) -> void:
 	update_health_bar()
 	is_vulnerable = false
 	$Timer.start()
+	var tween = create_tween()
+	tween.tween_property(animated_sprite, "modulate", Color.RED,0.1)
+	tween.tween_property(animated_sprite, "modulate", Color.WHITE,0.1)
 	print("Player took ",mitigated_damage," damage. HP left: ",stats.current_health)
 	if stats.current_health<=0:
 		die()

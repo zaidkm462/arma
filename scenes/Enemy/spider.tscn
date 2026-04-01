@@ -77,7 +77,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_geitt")
 }],
 "loop": true,
-"name": &"enemy2animation",
+"name": &"walk",
 "speed": 9.0
 }]
 
@@ -86,13 +86,13 @@ radius = 23.021729
 
 [node name="Enemy2" type="Area2D" unique_id=2069956841]
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_bak7y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=491380299]
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_k06wl")
-animation = &"enemy2animation"
-frame_progress = 0.9398605
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956411851]
 position = Vector2(-11, 0)
