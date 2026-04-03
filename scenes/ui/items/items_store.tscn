@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0hvwyc52h6f" path="res://scenes/ui/items/frame.png" id="2_5x0uo"]
 [ext_resource type="Texture2D" uid="uid://mri2q5kk8tkc" path="res://scenes/passive_items/battery.png" id="3_nqwiv"]
 [ext_resource type="Texture2D" uid="uid://bnukusijxbksb" path="res://scenes/ui/items/card2/buy.png" id="4_s83m4"]
+[ext_resource type="Texture2D" uid="uid://cxspfm470oq8" path="res://scenes/ui/weapons/card/buy_press.png" id="5_s83m4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhwtx"]
 texture = ExtResource("2_5x0uo")
@@ -141,6 +142,7 @@ offset_top = 22.0
 offset_right = 408.0
 offset_bottom = 46.0
 texture_normal = ExtResource("4_s83m4")
+texture_pressed = ExtResource("5_s83m4")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Panel/DetailsPanel/TextureButton" unique_id=687954366]

@@ -54,7 +54,6 @@ func spawn(name: String, spawn_position: Vector2):
 	new_enemy.global_position = spawn_position
 	get_tree().current_scene.get_node("Enemies").add_child(new_enemy)
 	alive_enemies.append(new_enemy)
-	print(name)
 
 
 func kill(enemy: Area2D):

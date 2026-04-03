@@ -59,6 +59,10 @@ right={
 
 pointing/emulate_touch_from_mouse=true
 
+[internationalization]
+
+rendering/root_node_layout_direction=1
+
 [layer_names]
 
 2d_physics/layer_1="player"

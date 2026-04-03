@@ -16,7 +16,10 @@ func _ready() -> void:
 	
 	weapon_slct_style_box.texture = load("res://scenes/ui/weapons/card/card_sl.png")
 	weapon_dslct_style_box.texture = load("res://scenes/ui/weapons/card/card_un.png")
-
+	
+	$Panel/DetailsPanel/TextureButton.pressed.connect(buy)
+	
+	
 	for i in weapons_list.weapons:
 		var weapon = weapon_card_scene.instantiate()
 		weapons_objects.append(weapon)
@@ -35,16 +38,30 @@ func select(id:String) -> void:
 			update_details()
 			break
 
+
+func buy() -> void:
+	var gold = 99999;
+	if selected_weapon.data.price > gold: return
+	
+	for w in weapons_list.weapons:
+		if w.id == selected_weapon.data.id:
+			w.purchased = true
+	ResourceSaver.save(weapons_list, "res://scenes/weapons/resources/weapons_list.tres")
+	selected_weapon.buy()
+	update_details()
+
 func update_details() -> void:
 	$Panel/DetailsPanel/Card/Label.text=selected_weapon.data.name
-	$Panel/DetailsPanel/DescLabel.text = "selected_weapon.data.description"
-	$Panel/DetailsPanel/Card/Icon.texture = selected_weapon.data.icon
 	var price:int = selected_weapon.data.price 
 	$Panel/DetailsPanel/TextureButton/Label.text = str(price)
 	if selected_weapon.data.purchased: 
+		$Panel/DetailsPanel/DescLabel.text = selected_weapon.data.desc
+		$Panel/DetailsPanel/Card/Icon.texture = selected_weapon.data.icon
 		$Panel/DetailsPanel/TextureButton.modulate = Color(0.37, 0.37, 0.37, 1)
 		$Panel/DetailsPanel/TextureButton.disabled=true
 	else:
+		$Panel/DetailsPanel/DescLabel.text = "Buy this Weapon to be able to see it details."
+		$Panel/DetailsPanel/Card/Icon.texture = null
 		$Panel/DetailsPanel/TextureButton.modulate = Color(1, 1, 1, 1)
 		$Panel/DetailsPanel/TextureButton.disabled=false
 		

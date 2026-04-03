@@ -6,7 +6,9 @@ var amount: int = 1
 var cool_down: float = 1.0
 var duration: float = 2.0
 var area_radius: int = 150
-var damage_amount: int = 1
+var damage: int = 1
+var pass_through: int = 1
+var level: int = 1
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var cool_down_timer: Timer = $CoolDownTimer
@@ -21,6 +23,18 @@ func _ready() -> void:
 	cool_down_timer.timeout.connect(fire)
 	cool_down_timer.start()
 
+func upgrade(stat: String, value: float) -> void:
+	if stat == "amount": amount += int(value)
+	elif stat == "pass_through": pass_through += int(value)
+	elif stat == "damage": damage+= int(value)
+	elif stat == "duration": duration += value
+	elif stat == "area":
+		area_radius += int(value)	
+		collision_shape.shape.radius = area_radius
+	elif stat == "cool_down":
+		cool_down += value	
+		cool_down_timer.wait_time =cool_down
+		cool_down_timer.start()
 
 func get_close_enemies(n: int) -> Array:
 	var enemies: Array = []
@@ -54,6 +68,6 @@ func fire() -> void:
 		projectile.global_position = global_position
 
 		if projectile.has_method("setup"):
-			projectile.setup(enemy, damage_amount)
+			projectile.setup(enemy, damage)
 
 		projectiles_parent.add_child(projectile)

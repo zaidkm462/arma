@@ -24,4 +24,9 @@ func _on_pressed() -> void:
 
 func deselect() -> void:
 	$Panel.add_theme_stylebox_override("panel", store.weapon_dslct_style_box)
-	 
+	
+
+func buy() -> void:	
+	$Panel/Icon.texture = data.icon
+	data.purchased = true
+	

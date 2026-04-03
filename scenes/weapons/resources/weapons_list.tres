@@ -1,24 +1,92 @@
-[gd_resource type="Resource" script_class="WeaponsList" format=3 uid="uid://be2uwuibs3lgl"]
+[gd_resource type="Resource" script_class="WeaponsList" format=3 uid="uid://db007mg4nc5cq"]
 
 [ext_resource type="Script" uid="uid://cudsh1kbblyl4" path="res://scenes/weapons/resources/weapons_list.gd" id="1_qahbe"]
-[ext_resource type="Script" uid="uid://bojfqrbixgjfk" path="res://scenes/weapons/magical_wand/single_weapon.gd" id="2_dtoox"]
+[ext_resource type="Script" uid="uid://bojfqrbixgjfk" path="res://scenes/weapons/resources/single_weapon.gd" id="2_dtoox"]
 [ext_resource type="Texture2D" uid="uid://c0k306hgs1f4s" path="res://scenes/passive_items/item5.png" id="3_dtoox"]
 [ext_resource type="PackedScene" uid="uid://by3b7hysyfkis" path="res://scenes/weapons/magical_wand/magical_wand.tscn" id="3_qahbe"]
+[ext_resource type="Script" uid="uid://bdwx5bb1l1pwf" path="res://scenes/weapons/resources/WeaponLevel.gd" id="4_oblaw"]
+[ext_resource type="Texture2D" uid="uid://dkpyvm8jqnk66" path="res://scenes/passive_items/item3.png" id="6_ix3oe"]
+
+[sub_resource type="Resource" id="Resource_jvv1p"]
+script = ExtResource("4_oblaw")
+no = 1
+desc = "Fires at the nearest enemy."
+stat = "None"
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_irfsq"]
+script = ExtResource("4_oblaw")
+no = 2
+desc = "Fires 1 more projectile."
+stat = "amount"
+value = 1.0
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_obyu2"]
+script = ExtResource("4_oblaw")
+no = 3
+desc = "Cooldown reduced by 0.2 seconds."
+stat = "cool_down"
+value = -0.2
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_wm3yc"]
+script = ExtResource("4_oblaw")
+no = 4
+desc = "Fires 1 more projectile."
+stat = "amount"
+value = 1.0
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_8c7hu"]
+script = ExtResource("4_oblaw")
+no = 5
+desc = "Base Damage up by 10."
+stat = "damage"
+value = 10.0
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_fbfbp"]
+script = ExtResource("4_oblaw")
+no = 6
+desc = "Fires 1 more projectile."
+stat = "amount"
+value = 1.0
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_qdci5"]
+script = ExtResource("4_oblaw")
+no = 7
+desc = "Passes through 1 more enemy."
+stat = "pass_through"
+value = 1.0
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_6gjuy"]
+script = ExtResource("4_oblaw")
+no = 8
+desc = "Base Damage up by 10."
+stat = "damage"
+value = 10.0
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
 
 [sub_resource type="Resource" id="Resource_1gvng"]
 script = ExtResource("2_dtoox")
 id = "mwand"
 name = "Magic Wand"
+desc = "Fires at the nearest enemy."
 scene = ExtResource("3_qahbe")
 icon = ExtResource("3_dtoox")
 price = 400
 purchased = true
+levels = Array[ExtResource("4_oblaw")]([SubResource("Resource_jvv1p"), SubResource("Resource_irfsq"), SubResource("Resource_obyu2"), SubResource("Resource_wm3yc"), SubResource("Resource_8c7hu"), SubResource("Resource_fbfbp"), SubResource("Resource_qdci5"), SubResource("Resource_6gjuy")])
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
 [sub_resource type="Resource" id="Resource_qahbe"]
 script = ExtResource("2_dtoox")
 id = "weapon2"
 name = "Weapon 2"
+desc = "Weapon 2 Description."
 icon = ExtResource("3_dtoox")
 price = 300
 purchased = true
@@ -28,6 +96,7 @@ metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 script = ExtResource("2_dtoox")
 id = "weapon3"
 name = "Weapon 3"
+desc = "Weapon 3 Description."
 icon = ExtResource("3_dtoox")
 price = 3000
 purchased = true
@@ -37,6 +106,8 @@ metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 script = ExtResource("2_dtoox")
 id = "weapon4"
 name = "Weapon 4"
+desc = "Weapon 4 Description."
+icon = ExtResource("6_ix3oe")
 price = 300
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
@@ -44,6 +115,7 @@ metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 script = ExtResource("2_dtoox")
 id = "weapon5"
 name = "Weapon 5"
+desc = "Weapon 5 Description."
 price = 300
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
@@ -51,6 +123,7 @@ metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 script = ExtResource("2_dtoox")
 id = "weapon6"
 name = "Weapon 6"
+desc = "Weapon 6 Description."
 price = 300
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
@@ -58,6 +131,7 @@ metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 script = ExtResource("2_dtoox")
 id = "weapon7"
 name = "Weapon 7"
+desc = "Weapon 7 Description."
 price = 300
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
@@ -65,6 +139,7 @@ metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 script = ExtResource("2_dtoox")
 id = "weapon8"
 name = "Weapon 8"
+desc = "Weapon 8 Description."
 price = 300
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
