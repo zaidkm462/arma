@@ -1,20 +1,11 @@
 class_name EnemyBase
 extends Area2D
-@onready var player
 @onready var animated_sprite=$AnimatedSprite2D
-@export var health=2
+@export var health=10
 @export var damage=10
 @export var speed=30
-@export var correction_value=0.1
 var is_contact=false
-var knockback_strength=200
-var knockback_duration:float=0.2
-var knockback_active:bool=false
-var knockback_velocity:Vector2=Vector2.ZERO
-var knockback_timer=0
 var hit_flash_tween:Tween=null
-@export var separation_distance=70
-
 
 var xp_drop_chance: float = 0.6
 var gold_drop_chance: float = 0.3
@@ -22,76 +13,134 @@ var xp_scene: PackedScene = preload("res://scenes/xp/xp.tscn")
 var gold_scene: PackedScene = preload("res://scenes/gold/gold.tscn")
 
 
+var knockback_distance: float = 40
+var knockback_time: float = 0.3
+var knockback_tween: Tween
+
+
+var separation_radius: float = 200
+var separation_weight: float = 1
+var separation_area: Area2D
+var separation_collision_shape: CollisionShape2D
+
+var push_radius: float = 16.0
+var max_pending_push: float = 12.0
+var pending_push: Vector2 = Vector2.ZERO
+
+func receive_push(push: Vector2) -> void:
+	pending_push += push
+	pending_push = pending_push.limit_length(max_pending_push)
 
 func _ready():
-	player=get_tree().get_first_node_in_group("player")
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-	area_entered.connect(_on_area_entered)
 	add_to_group("enemy")
+	_create_separation_area()
 
-func _process(delta):
-	if knockback_active:
-		global_position+=knockback_velocity*delta
-		knockback_timer-=delta
-		if knockback_timer<=0:
-			knockback_active=false
+func _create_separation_area() -> void:
+	separation_area = Area2D.new()
+	separation_area.name = "SeparationArea"
+	separation_area.collision_layer = 0
+	separation_area.collision_mask = 2
+	separation_area.monitoring = true
+	separation_area.monitorable = false
+	separation_area.visible = false
+
+	separation_collision_shape = CollisionShape2D.new()
+	var circle := CircleShape2D.new()
+	circle.radius = separation_radius
+	separation_collision_shape.shape = circle
+
+	separation_area.add_child(separation_collision_shape)
+	add_child(separation_area)
+
+func _physics_process(delta: float) -> void:
+	if not GameManager.Player:
 		return
-	separate_from_enemies()
-	if player and not is_contact:
-		move_toward_player(delta)
-	if is_contact and player:
-		apply_damage_to_player()
 
-func move_toward_player(delta):
-	var direction=(player.global_position-global_position).normalized()
-	global_position+=direction*speed*delta
+	var chase_velocity := Vector2.ZERO
+	if not is_contact:
+		chase_velocity = (GameManager.Player.global_position - global_position).normalized() * speed
 
-	if direction.x>0.3:
-		animated_sprite.flip_h=false
-	elif direction.x<-0.3:
-		animated_sprite.flip_h=true
-	if global_position.length()>0:
+	var separation_velocity :Vector2= _get_separation_force() * separation_weight * speed
+	var final_velocity := chase_velocity + separation_velocity
+	final_velocity = final_velocity.limit_length(speed)
+	if final_velocity.length_squared() < 0.0004:
+		final_velocity = Vector2.ZERO
+
+	global_position += final_velocity * delta
+	if pending_push != Vector2.ZERO:
+		global_position += pending_push
+		pending_push = Vector2.ZERO
+
+	if chase_velocity.x < -0.5:
+		animated_sprite.flip_h = true
+	elif chase_velocity.x > 0.5:
+		animated_sprite.flip_h = false
+
+	if final_velocity != Vector2.ZERO:
 		animated_sprite.play("walk")
 
+	if is_contact:
+		apply_damage_to_player()
+func _get_separation_force() -> Vector2:
+	var push := Vector2.ZERO
+
+	for other in separation_area.get_overlapping_areas():				
+		if other == self or other.name == "SeparationArea":
+			continue
+		var other_pos := other.global_position		
+
+		var away := global_position - other_pos
+		var dist := away.length()
+
+		if dist < separation_radius:
+			var t := 1.0 - (dist / separation_radius)
+			push += away.normalized() * t * t
+
+	if push.length_squared() < 0.0004:
+		return Vector2.ZERO
+
+	return push
+
 func _on_body_entered(body:CharacterBody2D):
-	if body==player:
+	if body==GameManager.Player:
 		is_contact=true
 		apply_damage_to_player()
 
 func _on_body_exited(body:CharacterBody2D):
-	if body==player:
+	if body==GameManager.Player:
 		is_contact=false
 
-func _on_area_entered(area:Area2D):
-	if area.is_in_group("enemy"):
-		var dir=(global_position-area.global_position).normalized()
-		global_position+=dir*5
-
-func separate_from_enemies():
-	var overlapping=get_overlapping_areas()
-	for area in overlapping:
-		if area.is_in_group("enemy") and area!=self:
-			var offset=global_position-area.global_position
-			var dist=offset.length()
-			if dist<separation_distance:
-				var dir=offset.normalized()
-				var correction=(separation_distance-dist)*correction_value
-				global_position+=dir*correction
 
 func apply_damage_to_player():
-	if player and player.has_method("damage"):
-		player.damage(damage)
+	if GameManager.Player and GameManager.Player.has_method("damage"):
+		GameManager.Player.damage(damage)
 
 func damage_enemy(amount:int):
 	health-=amount
-	var direction=(global_position-player.global_position).normalized()
-	knockback_velocity=direction*knockback_strength
-	knockback_timer=knockback_duration
-	knockback_active=true
+	var direction=(global_position-GameManager.Player.global_position).normalized()
 	flash_sprite()
+	knockback_smooth()
 	if health<=0:
 		die()
+
+func knockback_smooth() -> void:
+	if knockback_tween:
+		knockback_tween.kill()
+
+	var away_dir: Vector2 = (global_position - GameManager.Player.global_position).normalized()
+
+	knockback_tween = create_tween()
+	knockback_tween.set_trans(Tween.TRANS_SINE)
+	knockback_tween.set_ease(Tween.EASE_OUT)
+	knockback_tween.tween_property(
+		self,
+		"global_position",
+		global_position + away_dir * knockback_distance,
+		knockback_time
+	)
+
 
 func flash_sprite():
 	if hit_flash_tween:
@@ -99,7 +148,6 @@ func flash_sprite():
 	hit_flash_tween=create_tween()
 	hit_flash_tween.tween_property(animated_sprite,"modulate",Color(4,4,4),0.05)
 	hit_flash_tween.tween_property(animated_sprite,"modulate",Color.WHITE,0.05)
-	
 func die():
 	drop_loot()
 	GameManager.SpawnManager.kill(self)

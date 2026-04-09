@@ -4,20 +4,25 @@ extends CharacterBody2D
 @export var stats:playerstats
 var is_vulnerable := true
 
+var push_radius: float = 18.0
+var player_push_share: float = 0.2
+var enemy_push_share: float = 0.8
+var max_push_per_enemy: float = 10.0
+
+
 func _ready():
 	GameManager.Player=self
 	$Timer.timeout.connect(_on_vul_timeout)
-	update_vulnerability_timer()
-	update_health_bar()
 	if stats and stats.current_health<=0:
 		stats.current_health=stats.max_health
+	update_vulnerability_timer()
+	update_health_bar()
 
 func _physics_process(delta):
 	var direction=Input.get_vector("left","right","up","down")
 	velocity=direction*stats.move_speed
 	move_and_slide()
-	
-
+	resolve_enemy_push()
 
 	if direction.x>0:
 		animated_sprite.flip_h=false
@@ -28,6 +33,31 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("idle")
 
+func resolve_enemy_push() -> void:
+	var total_player_push := Vector2.ZERO
+
+	for enemy in GameManager.SpawnManager.alive_enemies:
+		if enemy == null or not is_instance_valid(enemy):
+			continue
+
+		var offset: Vector2 = enemy.global_position - global_position
+		var dist: float = offset.length()
+
+		if dist <= 0.001:
+			offset = Vector2.RIGHT
+			dist = 0.001
+
+		var min_dist: float = push_radius + enemy.push_radius
+
+		if dist < min_dist:
+			var penetration: float = min_dist - dist
+			var normal: Vector2 = offset / dist
+			var correction: Vector2 = normal * min(penetration, max_push_per_enemy)
+
+			total_player_push -= correction * player_push_share
+			enemy.receive_push(correction * enemy_push_share)
+
+	global_position += total_player_push
 
 func damage(amount: int) -> void:
 	if not is_vulnerable: return
@@ -44,12 +74,12 @@ func damage(amount: int) -> void:
 	if stats.current_health<=0:
 		die()
 
-
 func die():
 	print("Player died")
 	GameManager.lose_game()
 
 func _on_vul_timeout() -> void: is_vulnerable = true
+
 func update_vulnerability_timer() -> void:
 	if stats: $Timer.wait_time = max(0.5, stats.vulnerablitiy)
 
