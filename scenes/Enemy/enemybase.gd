@@ -152,7 +152,6 @@ func flash_sprite():
 	hit_flash_tween=create_tween()
 	hit_flash_tween.tween_property(animated_sprite,"modulate",Color(4,4,4),0.05)
 	hit_flash_tween.tween_property(animated_sprite,"modulate",Color.WHITE,0.05)
-	
 func die():
 	drop_loot()
 	knockback_smooth(40)
