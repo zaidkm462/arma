@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cj6en6f6c3n1l"]
+
+[ext_resource type="Script" uid="uid://cnnifacokx7hl" path="res://scenes/weapons/fire_wand/fire_wand.gd" id="1_1yit3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1ue7"]
+
+[node name="FireWand" type="Area2D" unique_id=276516154]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_1yit3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=93741282]
+shape = SubResource("CircleShape2D_s1ue7")
+
+[node name="CoolDownTimer" type="Timer" parent="." unique_id=338039412]

@@ -25,6 +25,7 @@ func _ready():
 
 
 func _on_spawn_timer_timeout():
+	#return
 	if alive_enemies.size() >= max_alive_enemies:
 		return
 

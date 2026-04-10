@@ -5,7 +5,6 @@ const GAME_SCENE := "res://scenes/main/main.tscn"
 
 
 
-
 var Player = null
 var SpawnManager = null
 var WeaponsManager = null

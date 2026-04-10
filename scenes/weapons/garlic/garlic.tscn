@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://7wlpfo13i7s8"]
+
+[ext_resource type="Script" uid="uid://bnyqgjqe0ouut" path="res://scenes/weapons/garlic/garlic.gd" id="1_5n8iq"]
+[ext_resource type="Texture2D" uid="uid://dq02yjgq0mdxh" path="res://scenes/weapons/garlic/garlic.png" id="2_ytlep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n8iq"]
+atlas = ExtResource("2_ytlep")
+region = Rect2(0, 0, 510, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo5ui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n8iq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvoow"]
+radius = 20.024984
+
+[node name="Garlic" type="Area2D" unique_id=1983026761]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_5n8iq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1217995938]
+position = Vector2(7.9999943, 39.999985)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_uo5ui")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=316145653]
+position = Vector2(1.9999982, 44.00001)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_xvoow")
+
+[node name="CoolDownTimer" type="Timer" parent="." unique_id=1214408308]

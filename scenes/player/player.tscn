@@ -75,6 +75,8 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [node name="player" type="CharacterBody2D" unique_id=825762787]
+z_index = 2
+scale = Vector2(0.8, 0.8)
 collision_mask = 6
 script = ExtResource("1_gmlin")
 stats = ExtResource("2_lvxji")
