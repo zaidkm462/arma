@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bryu50p4injkg"]
+
+[ext_resource type="Texture2D" uid="uid://bko4j7b5c3h2m" path="res://scenes/Enemy/spritesheets/angrymicrowave.png" id="1_jvj3d"]
+[ext_resource type="Script" uid="uid://clludgtqptwnr" path="res://scenes/Enemy/angrymicrowave.gd" id="1_s4oc3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4oc3"]
+atlas = ExtResource("1_jvj3d")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lfd4"]
+atlas = ExtResource("1_jvj3d")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6irh"]
+atlas = ExtResource("1_jvj3d")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33cdk"]
+atlas = ExtResource("1_jvj3d")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v425"]
+atlas = ExtResource("1_jvj3d")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjhjj"]
+atlas = ExtResource("1_jvj3d")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nesl7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4oc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lfd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6irh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33cdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v425")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjhjj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvj3d"]
+radius = 12.0
+
+[node name="Angrymicrowave" type="Area2D" unique_id=446292751]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_s4oc3")
+health = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=353930056]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_nesl7")
+animation = &"walk"
+frame = 4
+frame_progress = 0.030830236
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2137534324]
+position = Vector2(-2, 7)
+shape = SubResource("CircleShape2D_jvj3d")

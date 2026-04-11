@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://b0r6hwl80bvkd"]
+
+[ext_resource type="Texture2D" uid="uid://bxb5vt5q7h6xr" path="res://scenes/Enemy/spritesheets/cybereye.png" id="1_2msvr"]
+[ext_resource type="Script" uid="uid://bethyccxd2sv5" path="res://scenes/Enemy/cypereye.gd" id="1_ej1v1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej1v1"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(0, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik341"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(22, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2aar"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(44, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v87ua"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(66, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctwps"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(88, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcr6f"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(110, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8pgv"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(132, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bfmf"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(154, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffc1p"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(176, 0, 22, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5rdr"]
+atlas = ExtResource("1_2msvr")
+region = Rect2(198, 0, 22, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvy0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej1v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik341")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2aar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v87ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctwps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcr6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8pgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bfmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffc1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5rdr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ax2d"]
+radius = 8.0
+
+[node name="Cypereye" type="Area2D" unique_id=906652350]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_ej1v1")
+health = 30
+damage = 25
+speed = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1988855260]
+sprite_frames = SubResource("SpriteFrames_yvy0v")
+animation = &"walk"
+frame = 3
+frame_progress = 0.59177613
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=494076501]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_6ax2d")

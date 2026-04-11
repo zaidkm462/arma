@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpx5ydn2uiwgi"]
 
 [ext_resource type="Script" uid="uid://bnwpb800ff0d7" path="res://scenes/Enemy/spider.gd" id="1_bak7y"]
-[ext_resource type="Texture2D" uid="uid://du8v83pmnqihm" path="res://scenes/Enemy/Spider.png" id="2_a8cpk"]
+[ext_resource type="Texture2D" uid="uid://du8v83pmnqihm" path="res://scenes/Enemy/spritesheets/Spider.png" id="2_a8cpk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mlyav"]
 atlas = ExtResource("2_a8cpk")
@@ -84,7 +84,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fqx87"]
 radius = 23.021729
 
-[node name="Enemy2" type="Area2D" unique_id=2069956841]
+[node name="spider" type="Area2D" unique_id=2069956841]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_bak7y")

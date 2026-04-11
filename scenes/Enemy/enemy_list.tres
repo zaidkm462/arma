@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://cubnjyephtpfi" path="res://scenes/Enemy/resources/enemy_list.gd" id="2_374cv"]
 [ext_resource type="PackedScene" uid="uid://bvq0jwncywewo" path="res://scenes/Enemy/robot.tscn" id="2_ssfr7"]
 [ext_resource type="PackedScene" uid="uid://dpx5ydn2uiwgi" path="res://scenes/Enemy/spider.tscn" id="3_2xb6f"]
+[ext_resource type="PackedScene" uid="uid://b24u68mkvs6m6" path="res://scenes/Enemy/drone.tscn" id="4_2xb6f"]
+[ext_resource type="PackedScene" uid="uid://bryu50p4injkg" path="res://scenes/Enemy/angrymicrowave.tscn" id="5_6ta51"]
+[ext_resource type="PackedScene" uid="uid://blg4xgpqxagta" path="res://scenes/Enemy/yellowrobot.tscn" id="6_8i3qk"]
+[ext_resource type="PackedScene" uid="uid://b4khosg37m0ui" path="res://scenes/Enemy/greenrobot.tscn" id="7_34to3"]
+[ext_resource type="PackedScene" uid="uid://b0r6hwl80bvkd" path="res://scenes/Enemy/cypereye.tscn" id="8_oohg6"]
 
 [sub_resource type="Resource" id="Resource_6ta51"]
 script = ExtResource("1_kdrl4")
@@ -17,7 +22,37 @@ name = "spider"
 scene = ExtResource("3_2xb6f")
 metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
 
+[sub_resource type="Resource" id="Resource_34to3"]
+script = ExtResource("1_kdrl4")
+name = "drone"
+scene = ExtResource("4_2xb6f")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
+
+[sub_resource type="Resource" id="Resource_oohg6"]
+script = ExtResource("1_kdrl4")
+name = "angrymicrowave"
+scene = ExtResource("5_6ta51")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
+
+[sub_resource type="Resource" id="Resource_2d8d3"]
+script = ExtResource("1_kdrl4")
+name = "yellowrobot"
+scene = ExtResource("6_8i3qk")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
+
+[sub_resource type="Resource" id="Resource_ycdt2"]
+script = ExtResource("1_kdrl4")
+name = "greenrobot"
+scene = ExtResource("7_34to3")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
+
+[sub_resource type="Resource" id="Resource_fkwvh"]
+script = ExtResource("1_kdrl4")
+name = "cybereye"
+scene = ExtResource("8_oohg6")
+metadata/_custom_type_script = "uid://bkpy6iys2uyn7"
+
 [resource]
 script = ExtResource("2_374cv")
-enemies = Array[ExtResource("1_kdrl4")]([SubResource("Resource_6ta51"), SubResource("Resource_8i3qk")])
+enemies = Array[ExtResource("1_kdrl4")]([SubResource("Resource_6ta51"), SubResource("Resource_8i3qk"), SubResource("Resource_34to3"), SubResource("Resource_oohg6"), SubResource("Resource_2d8d3"), SubResource("Resource_ycdt2"), SubResource("Resource_fkwvh")])
 metadata/_custom_type_script = "uid://cubnjyephtpfi"

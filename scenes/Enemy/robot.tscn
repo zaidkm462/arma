@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvq0jwncywewo"]
 
 [ext_resource type="Script" uid="uid://tv86aflq3lxb" path="res://scenes/Enemy/robot.gd" id="1_84vye"]
-[ext_resource type="Texture2D" uid="uid://dy56278bg4dpo" path="res://scenes/Enemy/robot.png" id="1_muyyy"]
+[ext_resource type="Texture2D" uid="uid://dy56278bg4dpo" path="res://scenes/Enemy/spritesheets/robot.png" id="1_muyyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84vye"]
 atlas = ExtResource("1_muyyy")
@@ -126,7 +126,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fqx87"]
 radius = 33.01515
 
-[node name="Enemy" type="Area2D" unique_id=2069956841]
+[node name="robot" type="Area2D" unique_id=2069956841]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_84vye")
