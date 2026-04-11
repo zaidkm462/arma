@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b4khosg37m0ui"]
+
+[ext_resource type="Script" uid="uid://crny4a4hl4tpb" path="res://scenes/Enemy/greenrobot.gd" id="1_i6a3p"]
+[ext_resource type="Texture2D" uid="uid://dggvha6in0rag" path="res://scenes/Enemy/spritesheets/greenrobot.png" id="1_ifi7u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6a3p"]
+atlas = ExtResource("1_ifi7u")
+region = Rect2(0, 114, 160, 93)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu1ux"]
+atlas = ExtResource("1_ifi7u")
+region = Rect2(160, 114, 160, 93)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cykpp"]
+atlas = ExtResource("1_ifi7u")
+region = Rect2(320, 114, 160, 93)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_purr2"]
+atlas = ExtResource("1_ifi7u")
+region = Rect2(480, 114, 160, 93)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4kuo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6a3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu1ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cykpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_purr2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7uibk"]
+radius = 23.0
+
+[node name="Greenrobot" type="Area2D" unique_id=756810864]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_i6a3p")
+health = 30
+damage = 30
+speed = 40
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2060490812]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_u4kuo")
+animation = &"walk"
+frame_progress = 0.4489393
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=50291357]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_7uibk")
