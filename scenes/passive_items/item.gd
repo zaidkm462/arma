@@ -10,3 +10,5 @@ extends Resource
 @export var rank: int
 @export var max_rank: int
 @export var base_price: int
+@export var level: int = 1
+@export var max_level: int = 8

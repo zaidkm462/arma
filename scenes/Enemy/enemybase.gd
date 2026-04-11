@@ -1,7 +1,7 @@
 class_name EnemyBase
 extends Area2D
 @onready var animated_sprite=$AnimatedSprite2D
-@export var health=10
+@export var health=1
 @export var damage=10
 @export var speed=30
 var is_contact=false

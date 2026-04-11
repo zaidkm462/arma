@@ -26,6 +26,10 @@ texture_margin_top = 11.0
 texture_margin_right = 11.0
 texture_margin_bottom = 11.0
 
+[sub_resource type="SystemFont" id="SystemFont_kv6yr"]
+font_names = PackedStringArray("Courier New")
+font_weight = 550
+
 [node name="Dash" type="CanvasLayer" unique_id=1767116134]
 script = ExtResource("1_2866a")
 
@@ -85,6 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Lose" type="CanvasLayer" parent="." unique_id=1533121074]
+visible = false
 
 [node name="Back" type="ColorRect" parent="Lose" unique_id=59861069]
 anchors_preset = 15
@@ -167,6 +172,60 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 15
 text = "Try Again"
+
+[node name="LevelUp" type="CanvasLayer" parent="." unique_id=674588712]
+visible = false
+
+[node name="Back" type="ColorRect" parent="LevelUp" unique_id=1055262450]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="ColorRect2" type="Panel" parent="LevelUp" unique_id=1251408638]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.5
+offset_top = -128.0
+offset_right = 121.5
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_whoxh")
+
+[node name="Label" type="Label" parent="LevelUp" unique_id=195197448]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -112.5
+offset_right = 39.0
+offset_bottom = -89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_kv6yr")
+text = "Level Up!"
+
+[node name="VContainer" type="VBoxContainer" parent="LevelUp" unique_id=2049963434]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -80.0
+offset_right = 105.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
 
 [node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("2_rpex1")]
 offset_left = 176.0

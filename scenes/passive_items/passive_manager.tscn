@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bqorrua3axfth"]
+
+[ext_resource type="Script" uid="uid://71x8n7fpmgy6" path="res://scenes/passive_items/passive_manager.gd" id="1_j6x0r"]
+
+[node name="PassiveManager" type="Node" unique_id=1000700531]
+script = ExtResource("1_j6x0r")

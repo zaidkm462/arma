@@ -88,7 +88,6 @@ radius = 23.021729
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_bak7y")
-health = 15
 speed = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=491380299]

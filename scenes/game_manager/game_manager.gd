@@ -8,7 +8,8 @@ const GAME_SCENE := "res://scenes/main/main.tscn"
 var Player = null
 var SpawnManager = null
 var WeaponsManager = null
-var CardsManager = null
+var PassivesManager = null
+var UpgradesManager = null
 var Dash = null
 
 var level := 1
@@ -39,7 +40,8 @@ func _reset_data() -> void:
 	Player = null
 	SpawnManager = null
 	WeaponsManager = null
-	CardsManager = null
+	UpgradesManager = null
+	PassivesManager = null
 	Dash = null	
 	level = 1
 	xp = 0
@@ -58,9 +60,11 @@ func eat_xp(amount:int)-> void:
 		level_up()
 	Dash.update_res(xp, level * lvl_mul, level, gold)
 
-func level_up() -> void:
+func level_up() -> void:	
+	get_tree().paused = true
 	level += 1
 	xp = 0
+	GameManager.Dash.level_up(GameManager.UpgradesManager.get_level_up_cards())	
 
 func update_time() -> void:
 	time += 1

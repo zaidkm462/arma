@@ -240,15 +240,83 @@ purchased = true
 levels = Array[ExtResource("4_oblaw")]([SubResource("Resource_8lqbu"), SubResource("Resource_2bogs"), SubResource("Resource_bxsx0"), SubResource("Resource_nx2p4"), SubResource("Resource_8hl48"), SubResource("Resource_5dmo8"), SubResource("Resource_duybt"), SubResource("Resource_00a73")])
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
+[sub_resource type="Resource" id="Resource_mspti"]
+script = ExtResource("4_oblaw")
+no = 1
+desc = "Damages nearby enemies. Reduces resistance to knockback and freeze."
+stat = "None"
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_ep5x5"]
+script = ExtResource("4_oblaw")
+no = 2
+desc = "Base Area up by 40%."
+stat = "area_scale"
+value = 40.0
+is_percentage = true
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_exdgy"]
+script = ExtResource("4_oblaw")
+no = 3
+desc = "Cooldown reduced by 0.1 seconds."
+stat = "cool_down"
+value = 0.1
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_isved"]
+script = ExtResource("4_oblaw")
+no = 4
+desc = "Base damage up by 5."
+stat = "damage"
+value = 5.0
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_cg2cq"]
+script = ExtResource("4_oblaw")
+no = 5
+desc = "Cooldown reduced by 0.2 seconds."
+stat = "cool_down"
+value = 0.2
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_ndkpn"]
+script = ExtResource("4_oblaw")
+no = 6
+desc = "Base Area up by 30%."
+stat = "area_scale"
+value = 30.0
+is_percentage = true
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_bvvb8"]
+script = ExtResource("4_oblaw")
+no = 7
+desc = "Base damage up by 4."
+stat = "damage"
+value = 4.0
+is_percentage = true
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
+[sub_resource type="Resource" id="Resource_kwprf"]
+script = ExtResource("4_oblaw")
+no = 8
+desc = "Base Area up by 10%."
+stat = "area_scale"
+value = 10.0
+is_percentage = true
+metadata/_custom_type_script = "uid://bdwx5bb1l1pwf"
+
 [sub_resource type="Resource" id="Resource_oblaw"]
 script = ExtResource("2_dtoox")
 id = "garlic"
 name = "Weapon 4"
-desc = "Weapon 4 Description."
+desc = "Damages nearby enemies. Reduces resistance to knockback and freeze."
 scene = ExtResource("11_irfsq")
 icon = ExtResource("6_ix3oe")
 price = 300
 purchased = true
+levels = Array[ExtResource("4_oblaw")]([SubResource("Resource_mspti"), SubResource("Resource_ep5x5"), SubResource("Resource_exdgy"), SubResource("Resource_isved"), SubResource("Resource_cg2cq"), SubResource("Resource_ndkpn"), SubResource("Resource_bvvb8"), SubResource("Resource_kwprf")])
 metadata/_custom_type_script = "uid://bojfqrbixgjfk"
 
 [sub_resource type="Resource" id="Resource_ix3oe"]

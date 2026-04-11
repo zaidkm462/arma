@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bdptfdoyc0poe" path="res://scenes/spawn_manager/spawn_manager.tscn" id="1_k2fmo"]
 [ext_resource type="Script" uid="uid://dt63m02tcttv5" path="res://scenes/main/main.gd" id="1_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://bqorrua3axfth" path="res://scenes/passive_items/passive_manager.tscn" id="2_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://cw8364ij3n64u" path="res://scenes/weapons_manger/weapons_manager.tscn" id="2_l3cfh"]
-[ext_resource type="PackedScene" uid="uid://dvc01gln7cs16" path="res://scenes/cards_manager/cards_manager.tscn" id="3_6q06x"]
 [ext_resource type="PackedScene" uid="uid://cxo7e172lhiv5" path="res://scenes/tile_map/tile_map.tscn" id="4_6q06x"]
+[ext_resource type="PackedScene" uid="uid://dvc01gln7cs16" path="res://scenes/upgrades_manager/upgrades_manager.tscn" id="5_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://cbcopwphopgql" path="res://scenes/player/player.tscn" id="6_hujxm"]
 [ext_resource type="PackedScene" uid="uid://drcv723tyiln1" path="res://scenes/test/test.tscn" id="6_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://cojoy7f06u6ib" path="res://scenes/dash/dash.tscn" id="7_hujxm"]
@@ -12,11 +13,13 @@
 [node name="Main" type="Node2D" unique_id=1303210787]
 script = ExtResource("1_yyfjg")
 
+[node name="PassiveManager" parent="." unique_id=1000700531 instance=ExtResource("2_b1x3f")]
+
 [node name="SpawnManager" parent="." unique_id=1376476210 instance=ExtResource("1_k2fmo")]
 
 [node name="WeaponsManager" parent="." unique_id=1213394010 instance=ExtResource("2_l3cfh")]
 
-[node name="CardsManager" parent="." unique_id=259449431 instance=ExtResource("3_6q06x")]
+[node name="UpgradesManager" parent="." unique_id=259449431 instance=ExtResource("5_b1x3f")]
 
 [node name="Enemies" type="Node" parent="." unique_id=357136998]
 
