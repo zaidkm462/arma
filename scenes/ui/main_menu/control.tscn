@@ -174,3 +174,5 @@ text = "LOADING.."
 [connection signal="pressed" from="BtnsContainer/ItemsBtn" to="." method="_on_items_btn_pressed"]
 [connection signal="pressed" from="BtnsContainer/WeaponsBtn" to="." method="_on_weapons_btn_pressed"]
 [connection signal="gui_input" from="Overlay" to="." method="_on_overlay_gui_input"]
+
+[connection signal="pressed" from="BtnsContainer/LabBtn" to="." method="_on_lab_btn_pressed"]

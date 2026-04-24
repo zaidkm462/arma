@@ -30,3 +30,9 @@ func _on_play_btn_pressed() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	GameManager.start_new_run()
+
+func _on_lab_btn_pressed() -> void:
+	$Overlay.show()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	GameManager.go_to_lab()

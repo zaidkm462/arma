@@ -1,0 +1,616 @@
+[gd_scene format=3 uid="uid://chslcbcaplb5b"]
+
+[ext_resource type="Texture2D" uid="uid://cegabgxvceb6r" path="res://scenes/lab/L.png" id="1_gq2x7"]
+[ext_resource type="Texture2D" uid="uid://744b57edv5my" path="res://scenes/lab/rbtn.png" id="2_bi3ph"]
+[ext_resource type="Texture2D" uid="uid://76ul4skquyu5" path="res://scenes/lab/desc.png" id="2_ngnlj"]
+[ext_resource type="Texture2D" uid="uid://d36mar54wjfo4" path="res://scenes/lab/rbtn_slctd.png" id="3_n3cpm"]
+[ext_resource type="Texture2D" uid="uid://ccskncsd5ubqf" path="res://scenes/lab/solved.png" id="3_soib5"]
+[ext_resource type="Texture2D" uid="uid://681q2yetuoan" path="res://scenes/lab/terminal.png" id="4_o632f"]
+[ext_resource type="Script" uid="uid://bbi25ehvwck06" path="res://scenes/lab/desc.gd" id="5_l0ccj"]
+[ext_resource type="Script" uid="uid://cdxvm1y6i6oqm" path="res://scenes/lab/code_edit.gd" id="7_mlliy"]
+[ext_resource type="Texture2D" uid="uid://lmvnursyp0w7" path="res://scenes/lab/btn3.png" id="8_mlliy"]
+[ext_resource type="Texture2D" uid="uid://cvl51ngbvmoq0" path="res://scenes/lab/max.png" id="9_ucfl2"]
+[ext_resource type="Texture2D" uid="uid://b3ygqm4b2lbtr" path="res://scenes/lab/new.png" id="11_w6r65"]
+[ext_resource type="Texture2D" uid="uid://b0vma6v2wk6s2" path="res://scenes/lab/head.png" id="12_n4wn5"]
+[ext_resource type="Texture2D" uid="uid://dofhaj8lv1i7r" path="res://scenes/lab/btn3_prsd.png" id="12_tgbm7"]
+[ext_resource type="Texture2D" uid="uid://bsijoxprqr684" path="res://scenes/lab/new_prsd.png" id="12_umjok"]
+[ext_resource type="Texture2D" uid="uid://b35hdmo3nwlui" path="res://scenes/lab/min.png" id="13_0mjck"]
+[ext_resource type="Texture2D" uid="uid://ccwoibl44dy0e" path="res://scenes/lab/x.png" id="14_umjok"]
+[ext_resource type="Script" uid="uid://c26ct261ggjnc" path="res://scenes/lab/lab.gd" id="15_lab"]
+
+[sub_resource type="SystemFont" id="SystemFont_n3cpm"]
+font_names = PackedStringArray("Cambria Math")
+
+[sub_resource type="SystemFont" id="SystemFont_4pbly"]
+font_names = PackedStringArray("Cambria Math")
+font_weight = 999
+
+[sub_resource type="SystemFont" id="SystemFont_bi3ph"]
+font_names = PackedStringArray("Cambria Math")
+
+[sub_resource type="SystemFont" id="SystemFont_mlliy"]
+font_names = PackedStringArray("Cambria Math")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlliy"]
+
+[sub_resource type="SystemFont" id="SystemFont_l0ccj"]
+font_names = PackedStringArray("Cambria Math")
+
+[sub_resource type="SystemFont" id="SystemFont_n4wn5"]
+font_names = PackedStringArray("Cambria Math")
+
+[node name="Lab" type="Control" unique_id=615328922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_lab")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1475135740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07058824, 0.15686275, 0.10980392, 1)
+
+[node name="Ranks" type="TextureRect" parent="." unique_id=1972057832]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 48.0
+offset_right = 180.0
+offset_bottom = 344.0
+texture = ExtResource("1_gq2x7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ranks" unique_id=818216815]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -133.0
+offset_right = 70.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="TextureButton" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=279580179]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+texture_pressed = ExtResource("3_n3cpm")
+texture_hover = ExtResource("3_n3cpm")
+texture_focused = ExtResource("3_n3cpm")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton" unique_id=1510991383]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 8: 200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=1083162212]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+texture_pressed = ExtResource("3_n3cpm")
+texture_hover = ExtResource("3_n3cpm")
+texture_focused = ExtResource("3_n3cpm")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton2" unique_id=1839116155]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 7: 300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=1649875038]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+texture_pressed = ExtResource("3_n3cpm")
+texture_hover = ExtResource("3_n3cpm")
+texture_focused = ExtResource("3_n3cpm")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton3" unique_id=414083820]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 6: 400"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=2052688033]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+texture_pressed = ExtResource("3_n3cpm")
+texture_hover = ExtResource("3_n3cpm")
+texture_focused = ExtResource("3_n3cpm")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton4" unique_id=1505347368]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 5: 500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton5" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=307631385]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton5" unique_id=1200389912]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 4: 600"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton6" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=1711668409]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton6" unique_id=855311544]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 3: 700"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton7" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=1290851475]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton7" unique_id=643284969]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 2: 800"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton8" type="TextureButton" parent="Ranks/VBoxContainer" unique_id=1330366998]
+layout_mode = 2
+texture_normal = ExtResource("2_bi3ph")
+texture_pressed = ExtResource("3_n3cpm")
+texture_hover = ExtResource("3_n3cpm")
+texture_focused = ExtResource("3_n3cpm")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Ranks/VBoxContainer/TextureButton8" unique_id=1367444862]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n3cpm")
+theme_override_font_sizes/font_size = 12
+text = "Rank 1: 900"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="desc" type="TextureRect" parent="." unique_id=565491950]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 47.0
+offset_right = 629.0
+offset_bottom = 189.0
+texture = ExtResource("2_ngnlj")
+
+[node name="Label" type="Label" parent="desc" unique_id=1480902972]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 65.0
+offset_bottom = 15.0
+theme_override_fonts/font = SubResource("SystemFont_4pbly")
+theme_override_font_sizes/font_size = 10
+text = "The Problem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="desc" unique_id=1969777763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="desc/MarginContainer" unique_id=856548457]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_bi3ph")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "You own a box-making company that can produce boxes in the shape of any regular polygon.
+Many customers use these boxes to transport circular objects - such as tin cans, glasses, tyres, or CDs.
+
+To assist them, you decided to print on every box the diameter of the largest circle that can fit inside the box.
+
+Input
+The number of equal sides of the regular polygon (sides ≥ 3),
+The length of each side of the polygon.
+Output
+Return the diameter of the largest circular item that can fit inside the polygon, accurate up to 0.001.
+
+Examples
+A box of 4 sides and a side length of 10 can hold a circular item of diameter 10.
+A box of 8 sides and a side length of 9 can hold a circular item of diameter approx. 21.72792206."
+script = ExtResource("5_l0ccj")
+
+[node name="Max" type="TextureButton" parent="desc" unique_id=675867551]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 16.0
+grow_horizontal = 0
+texture_normal = ExtResource("9_ucfl2")
+
+[node name="output" type="TextureRect" parent="." unique_id=1645653747]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 191.0
+offset_right = 368.0
+offset_bottom = 343.0
+texture = ExtResource("3_soib5")
+
+[node name="Label" type="Label" parent="output" unique_id=1731239127]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 39.0
+offset_bottom = 14.0
+theme_override_fonts/font = SubResource("SystemFont_4pbly")
+theme_override_font_sizes/font_size = 10
+text = "Output"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="output" unique_id=621687028]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="output/MarginContainer" unique_id=374180805]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 0.77254903)
+theme_override_fonts/normal_font = SubResource("SystemFont_bi3ph")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "Run Your code to see the output result.."
+script = ExtResource("5_l0ccj")
+
+[node name="Terminal" type="TextureRect" parent="." unique_id=1149416324]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 191.0
+offset_right = 630.0
+offset_bottom = 309.0
+texture = ExtResource("4_o632f")
+
+[node name="Label" type="Label" parent="Terminal" unique_id=114702243]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 49.0
+offset_bottom = 15.0
+theme_override_fonts/font = SubResource("SystemFont_4pbly")
+theme_override_font_sizes/font_size = 10
+text = "Terminal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Terminal" unique_id=1031090576]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CodeEdit" type="CodeEdit" parent="Terminal/MarginContainer" unique_id=1330003177]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_mlliy")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mlliy")
+text = "def circle_diameter(sides, side_length): 
+    # your code here
+
+    # your code here 
+    # your code h    # your code here    # your code hereere
+    # your code here
+    # your code here 
+    # your code here
+    # your code here
+    pass"
+script = ExtResource("7_mlliy")
+
+[node name="Max" type="TextureButton" parent="Terminal" unique_id=111948708]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 16.0
+grow_horizontal = 0
+texture_normal = ExtResource("9_ucfl2")
+
+[node name="run" type="TextureButton" parent="." unique_id=586551142]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 312.0
+offset_right = 497.0
+offset_bottom = 343.0
+texture_normal = ExtResource("8_mlliy")
+texture_pressed = ExtResource("12_tgbm7")
+texture_hover = ExtResource("12_tgbm7")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="run" unique_id=415778876]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_l0ccj")
+theme_override_font_sizes/font_size = 10
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="submit" type="TextureButton" parent="." unique_id=1556259084]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 312.0
+offset_right = 631.0
+offset_bottom = 343.0
+texture_normal = ExtResource("8_mlliy")
+texture_pressed = ExtResource("12_tgbm7")
+texture_hover = ExtResource("12_tgbm7")
+
+[node name="Label" type="Label" parent="submit" unique_id=1810179391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_l0ccj")
+theme_override_font_sizes/font_size = 10
+text = "Submit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1240190183]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 27.0
+offset_right = 629.0
+offset_bottom = 44.0
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer" unique_id=1045598940]
+layout_mode = 2
+texture_normal = ExtResource("11_w6r65")
+texture_pressed = ExtResource("12_umjok")
+texture_hover = ExtResource("12_umjok")
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureButton" unique_id=7556732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n4wn5")
+theme_override_font_sizes/font_size = 10
+text = "Get New Problem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer" unique_id=1171811692]
+layout_mode = 2
+texture_normal = ExtResource("11_w6r65")
+texture_pressed = ExtResource("12_umjok")
+texture_hover = ExtResource("12_umjok")
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureButton2" unique_id=1715913805]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n4wn5")
+theme_override_font_sizes/font_size = 10
+text = "Replace Current Problem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer" unique_id=448198780]
+layout_mode = 2
+texture_normal = ExtResource("11_w6r65")
+texture_pressed = ExtResource("12_umjok")
+texture_hover = ExtResource("12_umjok")
+
+[node name="Label" type="Label" parent="HBoxContainer/TextureButton3" unique_id=169733487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n4wn5")
+theme_override_font_sizes/font_size = 10
+text = "View Solved Problems"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=781452409]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 179.0
+offset_bottom = 44.0
+texture_normal = ExtResource("12_n4wn5")
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=235824654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_n4wn5")
+theme_override_font_sizes/font_size = 10
+text = "Authorization: Logged"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="title" type="HBoxContainer" parent="." unique_id=1783583192]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 4.0
+offset_right = -11.0
+offset_bottom = 19.0
+grow_horizontal = 0
+
+[node name="TextureButton" type="TextureButton" parent="title" unique_id=859102873]
+layout_mode = 2
+texture_normal = ExtResource("13_0mjck")
+
+[node name="TextureButton2" type="TextureButton" parent="title" unique_id=290310308]
+layout_mode = 2
+texture_normal = ExtResource("9_ucfl2")
+
+[node name="TextureButton3" type="TextureButton" parent="title" unique_id=1266954637]
+layout_mode = 2
+texture_normal = ExtResource("14_umjok")

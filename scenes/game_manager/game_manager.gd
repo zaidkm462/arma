@@ -2,6 +2,7 @@ extends Node
 
 const MAIN_MENU_SCENE := "res://scenes/ui/main_menu/control.tscn"
 const GAME_SCENE := "res://scenes/main/main.tscn"
+const LAB_SCENE := "res://scenes/lab/lab.tscn"
 
 
 
@@ -53,6 +54,12 @@ func go_to_main_menu() -> void:
 	timer.stop()
 	_reset_data()
 	get_tree().change_scene_to_file(MAIN_MENU_SCENE)
+
+func go_to_lab() -> void:
+	get_tree().paused = false
+	timer.stop()
+	_reset_data()
+	get_tree().change_scene_to_file(LAB_SCENE)
 
 func eat_xp(amount:int)-> void:
 	xp += amount
