@@ -1,108 +1,107 @@
 [gd_resource type="Resource" script_class="PassiveItemsList" format=3 uid="uid://b7bd3387blo3r"]
 
 [ext_resource type="Script" uid="uid://m0n82ctwgwkw" path="res://scenes/passive_items/item.gd" id="1_dk1ut"]
-[ext_resource type="Texture2D" uid="uid://mri2q5kk8tkc" path="res://scenes/passive_items/battery.png" id="2_0uunq"]
+[ext_resource type="Texture2D" uid="uid://bxenh45srdsby" path="res://scenes/passive_items/battery.png" id="2_0uunq"]
 [ext_resource type="Script" uid="uid://c72c5eeujbn0t" path="res://scenes/passive_items/items_list.gd" id="3_3qgcb"]
-[ext_resource type="Texture2D" uid="uid://hc1vpwqqjkju" path="res://scenes/passive_items/item2.png" id="3_gwjl1"]
-[ext_resource type="Texture2D" uid="uid://dkpyvm8jqnk66" path="res://scenes/passive_items/item3.png" id="4_6r1ld"]
-[ext_resource type="Texture2D" uid="uid://dsvyn5t8cldvj" path="res://scenes/passive_items/item4.png" id="5_xsy20"]
-[ext_resource type="Texture2D" uid="uid://c0k306hgs1f4s" path="res://scenes/passive_items/item5.png" id="6_d1mk1"]
-[ext_resource type="Texture2D" uid="uid://do23lvvqtn2do" path="res://scenes/passive_items/item6.png" id="7_6r1ld"]
-[ext_resource type="Texture2D" uid="uid://4vgto0yeeivu" path="res://scenes/passive_items/item7.png" id="7_j8i0c"]
-[ext_resource type="Texture2D" uid="uid://bxenh45srdsby" path="res://scenes/passive_items/item8.png" id="8_y2uw8"]
+[ext_resource type="Texture2D" uid="uid://dq8yl1nknjcc0" path="res://scenes/passive_items/osci.png" id="3_gwjl1"]
+[ext_resource type="Texture2D" uid="uid://be6yuyaeouccd" path="res://scenes/passive_items/area.png" id="5_gwjl1"]
+[ext_resource type="Texture2D" uid="uid://dsvyn5t8cldvj" path="res://scenes/passive_items/duplicator.png" id="6_6r1ld"]
+[ext_resource type="Texture2D" uid="uid://dp54riasdlykg" path="res://scenes/passive_items/speed.png" id="6_gwjl1"]
+[ext_resource type="Texture2D" uid="uid://ncph87o8vfyp" path="res://scenes/passive_items/recovery.png" id="7_gwjl1"]
+[ext_resource type="Texture2D" uid="uid://bl2vao50vwb1c" path="res://scenes/passive_items/armor.png" id="8_6r1ld"]
+[ext_resource type="Texture2D" uid="uid://4vgto0yeeivu" path="res://scenes/passive_items/revive.png" id="9_xsy20"]
 
 [sub_resource type="Resource" id="Resource_wukb5"]
 script = ExtResource("1_dk1ut")
 id = "battery"
 name = "Battery"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
+description = "Increases Weapon Damage By 5% per Rank."
 icon = ExtResource("2_0uunq")
-stat = "might"
-base_value = 5.0
+stat = "damage"
+base_value = 1.0
 rank = 2
-max_rank = 4
-base_price = 500
-
-[sub_resource type="Resource" id="Resource_771nr"]
-script = ExtResource("1_dk1ut")
-id = "item2"
-name = "Item 2"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
-icon = ExtResource("3_gwjl1")
-stat = "might"
-base_value = 5.0
-rank = 3
-max_rank = 3
-base_price = 500
-
-[sub_resource type="Resource" id="Resource_haudp"]
-script = ExtResource("1_dk1ut")
-id = "item3"
-name = "item3"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
-icon = ExtResource("4_6r1ld")
-stat = "might"
-base_value = 5.0
-rank = 4
-max_rank = 4
-base_price = 500
-
-[sub_resource type="Resource" id="Resource_gwjl1"]
-script = ExtResource("1_dk1ut")
-id = "item4"
-name = "item4"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
-icon = ExtResource("5_xsy20")
-stat = "might"
-base_value = 5.0
-max_rank = 1
-base_price = 500
-
-[sub_resource type="Resource" id="Resource_6r1ld"]
-script = ExtResource("1_dk1ut")
-id = "item5"
-name = "item5"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
-icon = ExtResource("6_d1mk1")
-stat = "might"
-base_value = 5.0
 max_rank = 4
 base_price = 500
 
 [sub_resource type="Resource" id="Resource_xsy20"]
 script = ExtResource("1_dk1ut")
-id = "item6"
-name = "item6"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
-icon = ExtResource("7_6r1ld")
-stat = "might"
+id = "recovery"
+name = "Recovery"
+description = "Recovers 0.1 HP per rank (max 0.5) per second."
+icon = ExtResource("7_gwjl1")
+stat = "recover"
+base_value = 0.2
+max_rank = 4
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_gwjl1"]
+script = ExtResource("1_dk1ut")
+id = "range"
+name = "Range"
+description = "Augments area of attacks by 5% per rank (max +10%)."
+icon = ExtResource("5_gwjl1")
+stat = "area_radius"
+base_value = 5.0
+max_rank = 1
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_haudp"]
+script = ExtResource("1_dk1ut")
+id = "oscillator"
+name = "Oscillator"
+description = "Uses weapons 2.5% faster per rank (max 5%)."
+icon = ExtResource("3_gwjl1")
+stat = "cool_down"
+base_value = 5.0
+rank = 4
+max_rank = 4
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_771nr"]
+script = ExtResource("1_dk1ut")
+id = "duplicator"
+name = "Duplicator"
+description = "Uses weapons 2.5% faster per rank (max 5%)."
+icon = ExtResource("6_6r1ld")
+stat = "amount"
+base_value = 1.0
+max_rank = 3
+base_price = 500
+
+[sub_resource type="Resource" id="Resource_6r1ld"]
+script = ExtResource("1_dk1ut")
+id = "speed"
+name = "Speed"
+description = "Character moves 5% faster per rank (max 10%)."
+icon = ExtResource("6_gwjl1")
+stat = "move_speed"
 base_value = 5.0
 max_rank = 4
 base_price = 500
 
 [sub_resource type="Resource" id="Resource_d1mk1"]
 script = ExtResource("1_dk1ut")
-id = "item7"
-name = "item7"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
-icon = ExtResource("7_j8i0c")
-stat = "might"
-base_value = 5.0
+id = "armor"
+name = "Armor"
+description = "Reduces incoming damage by 1 per rank (max -3)."
+icon = ExtResource("8_6r1ld")
+stat = "armor"
+base_value = 1.0
 max_rank = 4
 base_price = 500
 
 [sub_resource type="Resource" id="Resource_j8i0c"]
 script = ExtResource("1_dk1ut")
-id = "item8"
-name = "Battery"
-description = "Increases Weapon Damage By 5% per Rank (Maximum 25%)"
-icon = ExtResource("8_y2uw8")
-stat = "might"
-base_value = 5.0
+id = "revive"
+name = "Revive"
+description = "Revives once with 50% health."
+icon = ExtResource("9_xsy20")
+stat = "revive"
+base_value = 1.0
 max_rank = 4
 base_price = 500
 
 [resource]
 script = ExtResource("3_3qgcb")
-items = Array[ExtResource("1_dk1ut")]([SubResource("Resource_wukb5"), SubResource("Resource_771nr"), SubResource("Resource_haudp"), SubResource("Resource_gwjl1"), SubResource("Resource_6r1ld"), SubResource("Resource_xsy20"), SubResource("Resource_d1mk1"), SubResource("Resource_j8i0c")])
+items = Array[ExtResource("1_dk1ut")]([SubResource("Resource_wukb5"), SubResource("Resource_xsy20"), SubResource("Resource_gwjl1"), SubResource("Resource_haudp"), SubResource("Resource_771nr"), SubResource("Resource_6r1ld"), SubResource("Resource_d1mk1"), SubResource("Resource_j8i0c")])
 metadata/_custom_type_script = "uid://c72c5eeujbn0t"

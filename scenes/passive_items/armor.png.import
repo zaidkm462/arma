@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxenh45srdsby"
-path="res://.godot/imported/battery.png-017e21d66e2c4741b1797473eaaae2e4.ctex"
+uid="uid://bl2vao50vwb1c"
+path="res://.godot/imported/armor.png-a236b8ca898c1475c0d7f0ffb249e4ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/passive_items/battery.png"
-dest_files=["res://.godot/imported/battery.png-017e21d66e2c4741b1797473eaaae2e4.ctex"]
+source_file="res://scenes/passive_items/armor.png"
+dest_files=["res://.godot/imported/armor.png-a236b8ca898c1475c0d7f0ffb249e4ae.ctex"]
 
 [params]
 

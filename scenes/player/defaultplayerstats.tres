@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_dikj5")
+gold_enc = 100
+gold_dec = 200
 max_health = 50
 current_health = 50
 metadata/_custom_type_script = "uid://ct42c86ea840j"

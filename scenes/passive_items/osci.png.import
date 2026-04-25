@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkpyvm8jqnk66"
-path="res://.godot/imported/item3.png-552bcb24fea93df856a4bf3ac6a4e191.ctex"
+uid="uid://dq8yl1nknjcc0"
+path="res://.godot/imported/osci.png-e7c1d0a6ef7be45a5ccbb4a54fe2a1b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/passive_items/item3.png"
-dest_files=["res://.godot/imported/item3.png-552bcb24fea93df856a4bf3ac6a4e191.ctex"]
+source_file="res://scenes/passive_items/osci.png"
+dest_files=["res://.godot/imported/osci.png-e7c1d0a6ef7be45a5ccbb4a54fe2a1b6.ctex"]
 
 [params]
 

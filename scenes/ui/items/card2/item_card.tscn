@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cw327mt8fsmtt" path="res://scenes/ui/items/card2/item_card.gd" id="1_66vof"]
 [ext_resource type="Texture2D" uid="uid://5vnpndsohnen" path="res://scenes/ui/items/card2/frame.png" id="1_lg71l"]
-[ext_resource type="Texture2D" uid="uid://mri2q5kk8tkc" path="res://scenes/passive_items/battery.png" id="4_xnjtm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xu1e"]
 texture = ExtResource("1_lg71l")
@@ -11,6 +10,9 @@ texture = ExtResource("1_lg71l")
 font_names = PackedStringArray("Courier New")
 font_weight = 550
 subpixel_positioning = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mbanx"]
+load_path = "res://.godot/imported/battery.png-017e21d66e2c4741b1797473eaaae2e4.ctex"
 
 [node name="ItemCard" type="Button" unique_id=1093135442]
 custom_minimum_size = Vector2(81, 85)
@@ -31,14 +33,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -23.5
-offset_top = 3.0
+offset_top = 5.0
 offset_right = 23.5
-offset_bottom = 26.0
+offset_bottom = 16.0
 grow_horizontal = 2
 theme_override_fonts/font = SubResource("SystemFont_svl8f")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 9
 text = "Battery"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1432533023]
 layout_mode = 0
@@ -61,6 +64,6 @@ offset_right = 20.0
 offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_xnjtm")
+texture = SubResource("CompressedTexture2D_mbanx")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

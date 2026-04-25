@@ -15,8 +15,10 @@ func _ready():
 	$Timer.timeout.connect(_on_vul_timeout)
 	if stats and stats.current_health<=0:
 		stats.current_health=stats.max_health
+	
 	update_vulnerability_timer()
 	update_health_bar()
+	
 
 func _physics_process(delta):
 	var direction=Input.get_vector("left","right","up","down")
@@ -86,3 +88,28 @@ func update_vulnerability_timer() -> void:
 func update_health_bar() -> void:
 	if stats and health_bar:
 		health_bar.set_health(stats.current_health, stats.max_health)
+
+func init_powerups() -> void:
+	var items : Dictionary[String,PassiveItem] = GameManager.PassivesManager.purchased_items
+	for item:PassiveItem in items.values():		
+		if not item.stat in self.stats: continue	
+		
+		self.stats.set(item.stat, self.stats.get(item.stat) + item.base_value * item.rank)		
+		
+		if item.stat in ["damage", "amount", "area_radius", "cool_down"]:
+			var old_w_value = self.stats.get(item.stat)
+			for w in GameManager.WeaponsManager.game_weapons.values():
+				if item.stat in w:
+					w.set(item.stat, old_w_value + item.base_value * item.rank)
+	print(">>>>>>", GameManager.WeaponsManager.game_weapons["mwand"].amount)
+
+
+func update_powerups(stat: String, value) -> void:	
+	if not stat in self.stats: return
+	
+	self.stats.set(stat, self.stats.get(stat) + value)
+	
+	if stat in ["damage", "amount", "area_radius", "cool_down"]:
+		for w in GameManager.WeaponsManager.game_weapons.values():
+			if stat in w:					
+				w.set(stat, w.get(stat) + value)

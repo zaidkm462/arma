@@ -16,11 +16,13 @@ func add(id: String) -> void:
 		return
 	if game_items.has(id): return	
 	
-	game_items[id] = purchased_items[id]
+	game_items[id] = purchased_items[id].duplicate()
+	GameManager.Player.update_powerups(game_items[id].stat, game_items[id].base_price)
 
 func upgrade(id: String) -> void:
 	if not game_items.has(id): return
 	game_items[id].level += 1
+	GameManager.Player.update_powerups(game_items[id].stat, game_items[id].base_price)
 	
 	
 

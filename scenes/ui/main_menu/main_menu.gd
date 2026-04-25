@@ -4,6 +4,8 @@ var store:Control = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$GoldPnl/Label.text = "Gold Enc: "+str(GameManager.gold_tres.gold_enc) + " G."
+	$GoldPnl2/Label.text = "Gold Dec: "+str(GameManager.gold_tres.gold_dec) + " G."
 	pass # Replace with function body.
 
 
@@ -36,3 +38,6 @@ func _on_lab_btn_pressed() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	GameManager.go_to_lab()
+
+
+	

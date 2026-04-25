@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do23lvvqtn2do"
-path="res://.godot/imported/item6.png-14bd93305faf053a209684bc0f14522b.ctex"
+uid="uid://dm7242y8xllf7"
+path="res://.godot/imported/gar_ico.png-b9f11cacdebe97ce9ba77d0f4e0bb61a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/passive_items/item6.png"
-dest_files=["res://.godot/imported/item6.png-14bd93305faf053a209684bc0f14522b.ctex"]
+source_file="res://scenes/weapons/garlic/gar_ico.png"
+dest_files=["res://.godot/imported/gar_ico.png-b9f11cacdebe97ce9ba77d0f4e0bb61a.ctex"]
 
 [params]
 

@@ -3,12 +3,13 @@ extends Node
 const MAIN_MENU_SCENE := "res://scenes/ui/main_menu/control.tscn"
 const GAME_SCENE := "res://scenes/main/main.tscn"
 const LAB_SCENE := "res://scenes/lab/lab.tscn"
+var gold_tres: GoldBase = preload("res://scenes/gold/gold.tres")
 
 
 
+var WeaponsManager = null
 var Player = null
 var SpawnManager = null
-var WeaponsManager = null
 var PassivesManager = null
 var UpgradesManager = null
 var Dash = null
@@ -82,5 +83,16 @@ func eat_gold(amount:int)-> void:
 	Dash.update_res(xp, level * lvl_mul, level, gold)
 
 func lose_game() -> void:
+	alter_gold("enc", gold)
 	get_tree().paused = true
 	Dash.show_lose()
+	
+
+func alter_gold(type: String, amount: int) -> void:
+	if type == "enc":
+		gold_tres.gold_enc = amount
+	else:		
+		gold_tres.gold_dec = amount
+	
+	ResourceSaver.save(gold_tres, "res://scenes/gold/gold.tres")
+		

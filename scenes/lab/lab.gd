@@ -157,6 +157,13 @@ func _on_submit_pressed() -> void:
 	var accepted: bool = bool(data.get("is_correct", false))
 	var status_text := "Accepted" if accepted else "Rejected"
 	_set_output_text("%s\n\n%s" % [status_text, feedback])
+	
+	if accepted:
+		var enc = GameManager.gold_tres.gold_enc
+		var dec = GameManager.gold_tres.gold_dec 
+		var awarded_gold: int = (8-current_rank) * 100 + 200 
+		GameManager.alter_gold("dec", dec + min(enc, awarded_gold))
+		GameManager.alter_gold("enc", max(0, enc-awarded_gold))
 
 func _load_problem(replace_current: bool) -> void:
 	if not _has_token():
