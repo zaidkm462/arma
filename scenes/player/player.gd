@@ -26,14 +26,20 @@ func _physics_process(delta):
 	move_and_slide()
 	resolve_enemy_push()
 
-	if direction.x>0:
-		animated_sprite.flip_h=false
-	elif direction.x<0:
-		animated_sprite.flip_h=true
-	if velocity.length()>0:
-		animated_sprite.play("walk")
+	if direction.x > 0:
+		animated_sprite.flip_h = false
+		animated_sprite.play("walk_side")
+	elif direction.x < 0:
+		animated_sprite.flip_h = true
+		animated_sprite.play("walk_side")
+	elif direction.y > 0:
+		animated_sprite.play("walk_down")
+	elif direction.y < 0:
+		animated_sprite.play("walk_up")
+	elif velocity.length() > 0:
+		animated_sprite.play("walk_down")
 	else:
-		animated_sprite.play("idle")
+		animated_sprite.stop()
 
 func resolve_enemy_push() -> void:
 	var total_player_push := Vector2.ZERO
@@ -103,7 +109,7 @@ func init_powerups() -> void:
 			for w in GameManager.WeaponsManager.game_weapons.values():
 				if item.stat in w:
 					w.set(item.stat, old_w_value + item.base_value * item.rank)
-	print(">>>>>>", GameManager.WeaponsManager.game_weapons["mwand"].amount)
+	#print(">>>>>>", GameManager.WeaponsManager.game_weapons["mwand"].amount)
 
 
 func update_powerups(stat: String, value) -> void:	
