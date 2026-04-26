@@ -36,6 +36,7 @@ func start_new_run() -> void:
 	get_tree().paused = false
 	_reset_data()
 	timer.stop()
+	AudioManager.play_gameplay_music()
 	get_tree().change_scene_to_file(GAME_SCENE)
 
 func _reset_data() -> void:
@@ -60,10 +61,12 @@ func go_to_lab() -> void:
 	get_tree().paused = false
 	timer.stop()
 	_reset_data()
+	AudioManager.play_menu_music()
 	get_tree().change_scene_to_file(LAB_SCENE)
 
 func eat_xp(amount:int)-> void:
 	xp += amount
+	AudioManager.play_gold_pickup_sound()
 	if xp >= level * lvl_mul:
 		level_up()
 	Dash.update_res(xp, level * lvl_mul, level, gold)
@@ -71,6 +74,8 @@ func eat_xp(amount:int)-> void:
 func level_up() -> void:	
 	get_tree().paused = true
 	level += 1
+	AudioManager.play_levelup_sound()
+	AudioManager.gold_sound.stop()
 	xp = 0
 	GameManager.Dash.level_up(GameManager.UpgradesManager.get_level_up_cards())	
 
@@ -80,9 +85,11 @@ func update_time() -> void:
 
 func eat_gold(amount:int)-> void:
 	gold += amount
+	AudioManager.play_gold_pickup_sound()
 	Dash.update_res(xp, level * lvl_mul, level, gold)
 
 func lose_game() -> void:
+	AudioManager.stop_gameplay_music()
 	alter_gold("enc", gold)
 	get_tree().paused = true
 	Dash.show_lose()

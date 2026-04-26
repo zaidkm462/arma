@@ -66,6 +66,7 @@ func damage(amount: int) -> void:
 	var mitigated_damage=max(1,amount-stats.armor)
 	stats.current_health-=mitigated_damage
 	stats.current_health=max(0,stats.current_health)
+	AudioManager.play_damage_sound()
 	update_health_bar()
 	is_vulnerable = false
 	$Timer.start()
@@ -74,6 +75,7 @@ func damage(amount: int) -> void:
 	tween.tween_property(animated_sprite, "modulate", Color.WHITE,0.1)
 	print("Player took ",mitigated_damage," damage. HP left: ",stats.current_health)
 	if stats.current_health<=0:
+		AudioManager.disable_damage_sound()
 		die()
 
 func die():

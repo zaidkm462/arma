@@ -37,14 +37,18 @@ func update_time(seconds: int) -> void:
 	time_label.text = "%02d:%02d" % [minutes, secs]
 
 func _on_retry_button_pressed() -> void:
+	AudioManager.play_button_sound()
 	GameManager.start_new_run()
 
 func _on_main_button_pressed() -> void:
+	AudioManager.play_button_sound()
 	GameManager.go_to_main_menu()
 
 
 func show_lose() -> void:
 	lose_panel.visible = true
+	if lose_panel.visible:
+		AudioManager.play_dead_sound()
 
 
 func level_up(cards:Array[Dictionary]) -> void:	

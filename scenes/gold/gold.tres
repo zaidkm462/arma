@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="GoldBase" format=3 uid="uid://en3pfujchcpo"]
+[gd_resource type="Resource" script_class="GoldBase" format=3]
 
-[ext_resource type="Script" uid="uid://c0kp8djdev015" path="res://scenes/gold/gold_base.gd" id="1_o0qnj"]
+[ext_resource type="Script" path="res://scenes/gold/gold_base.gd" id="1_o0qnj"]
 
 [resource]
 script = ExtResource("1_o0qnj")

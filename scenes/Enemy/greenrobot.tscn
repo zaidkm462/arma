@@ -47,7 +47,7 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_i6a3p")
 health = 30
-damage = 30
+damage = 15
 speed = 40
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2060490812]

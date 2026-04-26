@@ -54,19 +54,24 @@ func _prepare_editor() -> void:
 		code_editor.text = STARTER_CODE
 
 func _on_back_pressed() -> void:
+	AudioManager.play_button_sound()
 	GameManager.go_to_main_menu()
 
 func _on_rank_selected(rank: int) -> void:
+	AudioManager.play_button_sound()
 	current_rank = rank
 	_load_problem(false)
 
 func _on_get_problem_pressed() -> void:
+	AudioManager.play_button_sound()
 	_load_problem(false)
 
 func _on_replace_problem_pressed() -> void:
+	AudioManager.play_button_sound()
 	_load_problem(true)
 
 func _on_view_solved_pressed() -> void:
+	AudioManager.play_button_sound()
 	if not _has_token():
 		_set_output_text("Missing bearer token. Paste it in res://scenes/lab/lab_config.gd.")
 		return
@@ -92,6 +97,7 @@ func _on_view_solved_pressed() -> void:
 	_set_output_text("Solved Problems\n\n%s" % "\n".join(lines))
 
 func _on_run_pressed() -> void:
+	AudioManager.play_button_sound()
 	var source_code: String = code_editor.text
 	if source_code.strip_edges().is_empty():
 		_set_output_text("The editor is empty. Write some Python code first.")
@@ -129,6 +135,7 @@ func _on_run_pressed() -> void:
 	_set_output_text(output_text)
 
 func _on_submit_pressed() -> void:
+	AudioManager.play_button_sound()
 	if not _has_token():
 		_set_output_text("Missing bearer token. Paste it in res://scenes/lab/lab_config.gd.")
 		return
@@ -159,11 +166,14 @@ func _on_submit_pressed() -> void:
 	_set_output_text("%s\n\n%s" % [status_text, feedback])
 	
 	if accepted:
+		AudioManager.play_correct_sound()
 		var enc = GameManager.gold_tres.gold_enc
 		var dec = GameManager.gold_tres.gold_dec 
 		var awarded_gold: int = (8-current_rank) * 100 + 200 
 		GameManager.alter_gold("dec", dec + min(enc, awarded_gold))
 		GameManager.alter_gold("enc", max(0, enc-awarded_gold))
+	else:
+		AudioManager.play_incorrect_sound()
 
 func _load_problem(replace_current: bool) -> void:
 	if not _has_token():
